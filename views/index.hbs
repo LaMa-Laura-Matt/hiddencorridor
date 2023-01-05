@@ -1,2 +1,25 @@
 <h1>{{appTitle}} 🚀</h1>
 <p>Welcome Ironhacker!</p>
+
+<div id="form">
+    <h2>Login</h2>
+
+    {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+    <form action="/login" method="POST">
+
+        <label> Wizard Name
+            <input type="string" name="wizardname" placeholder="theChosenOne" required />
+        </label>
+
+        <label>Password
+            <input type="password" name="password" placeholder="********" required />
+        </label>
+
+        <button type="submit">Login</button>
+
+    </form>
+</div>
+<a href="/auth/signup">Register</a>

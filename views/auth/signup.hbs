@@ -2,16 +2,30 @@
   <h2>Sign Up</h2>
   <form action="/auth/signup" method="POST">
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
+    <label> Wizardname
+      <input type="text" name="Wizardname" placeholder="theChosenOne" />
     </label>
 
     <label> Password
       <input type="password" name="password" placeholder="Your password" />
+    </label>
+
+      <label> Name
+      <input type="text" name="name" placeholder="Harry Potter" />
+    </label>
+
+    <label> First Year of Hogwarts
+      <input type="number" name="firstYearOfHogwarts" placeholder="1998" />
+    </label>
+
+        <label> Your house
+        <select name="house">
+
+            <option value="gryffindor">Gryffindor</option>
+             <option value="slytherin">Slytherin</option>
+              <option value="hufflepuff">Hufflepuff</option>
+               <option value="ravenclaw">Ravenclaw</option>
+        </select>
     </label>
 
     <button type="submit">Sign Up</button>

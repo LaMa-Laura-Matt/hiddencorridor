@@ -8,8 +8,8 @@ const mongoose = require("mongoose");
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
 
-// Require the User model in order to interact with the database
-const User = require("../models/User.model");
+// Require the Wizard model in order to interact with the database
+const Wizard = require("../models/Wizard.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -22,13 +22,13 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body;
+  const { Wizardname, name, password, firstYearOfHogwarts, house } = req.body;
 
-  // Check that username, email, and password are provided
-  if (username === "" || email === "" || password === "") {
+  // Check that Wizardname, email, and password are provided
+  if (Wizardname === "" || name === "" || password === "" || firstYearOfHogwarts === "" || house === "" ) {
     res.status(400).render("auth/signup", {
       errorMessage:
-        "All fields are mandatory. Please provide your username, email and password.",
+        "All fields are mandatory. Please provide your Wizardname, email and password.",
     });
 
     return;
@@ -55,15 +55,15 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
   */
 
-  // Create a new user - start by hashing the password
+  // Create a new Wizard - start by hashing the password
   bcrypt
     .genSalt(saltRounds)
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
-      // Create a user and save it in the database
-      return User.create({ username, email, password: hashedPassword });
+      // Create a Wizard and save it in the database
+      return Wizard.create({ Wizardname, name, password: hashedPassword, firstYearOfHogwarts, house });
     })
-    .then((user) => {
+    .then((Wizard) => {
       res.redirect("/auth/login");
     })
     .catch((error) => {
@@ -72,7 +72,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       } else if (error.code === 11000) {
         res.status(500).render("auth/signup", {
           errorMessage:
-            "Username and email need to be unique. Provide a valid username or email.",
+            "Wizardname and email need to be unique. Provide a valid Wizardname or email.",
         });
       } else {
         next(error);
@@ -87,13 +87,13 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { Wizardname, email, password } = req.body;
 
-  // Check that username, email, and password are provided
-  if (username === "" || email === "" || password === "") {
+  // Check that Wizardname, email, and password are provided
+  if (Wizardname === "" || email === "" || password === "") {
     res.status(400).render("auth/login", {
       errorMessage:
-        "All fields are mandatory. Please provide username, email and password.",
+        "All fields are mandatory. Please provide Wizardname, email and password.",
     });
 
     return;
@@ -107,20 +107,20 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     });
   }
 
-  // Search the database for a user with the email submitted in the form
-  User.findOne({ email })
-    .then((user) => {
-      // If the user isn't found, send an error message that user provided wrong credentials
-      if (!user) {
+  // Search the database for a Wizard with the email submitted in the form
+  Wizard.findOne({ email })
+    .then((Wizard) => {
+      // If the Wizard isn't found, send an error message that Wizard provided wrong credentials
+      if (!Wizard) {
         res
           .status(400)
           .render("auth/login", { errorMessage: "Wrong credentials." });
         return;
       }
 
-      // If user is found based on the username, check if the in putted password matches the one saved in the database
+      // If Wizard is found based on the Wizardname, check if the in putted password matches the one saved in the database
       bcrypt
-        .compare(password, user.password)
+        .compare(password, Wizard.password)
         .then((isSamePassword) => {
           if (!isSamePassword) {
             res
@@ -129,10 +129,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
             return;
           }
 
-          // Add the user object to the session object
-          req.session.currentUser = user.toObject();
+          // Add the Wizard object to the session object
+          req.session.currentWizard = Wizard.toObject();
           // Remove the password field
-          delete req.session.currentUser.password;
+          delete req.session.currentWizard.password;
 
           res.redirect("/");
         })
