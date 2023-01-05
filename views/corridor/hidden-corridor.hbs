@@ -1,1 +1,13 @@
 <h1>Wow how did you get in????<h1>
+
+    {{#each potions}}
+<section>
+    <h2>{{this.potionName}}</h2>
+    <p>
+        Ingredients: {{this.ingredients}} <br />
+        Method: {{this.method}} <br />
+      
+    </p>
+
+</section>
+{{/each}}

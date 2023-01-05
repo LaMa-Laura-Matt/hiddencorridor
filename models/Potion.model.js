@@ -9,23 +9,23 @@ const PotionSchema = new Schema(
       unique: true,
       trim: true,
     },
-    Ingredients: {
-      type: [String],
-      required: true,
-    },
-    Method: {
+    ingredients: {
       type: String,
       required: true,
     },
-    PotionTime: {
+    method: {
+      type: String,
+      required: true,
+    },
+    potionTime: {
       type:Number,
       required:false
     },
-    Difficulty: {
+    difficulty: {
       type: String,
       required: false
     },
-    SideEffects: {
+    sideEffects: {
       type:String,
       required: false
     }
