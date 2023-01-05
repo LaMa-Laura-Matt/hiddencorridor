@@ -2,34 +2,57 @@
   <h2>Sign Up</h2>
   <form action="/auth/signup" method="POST">
 
-    <label> Wizardname
-      <input type="text" name="Wizardname" placeholder="theChosenOne" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-      <label> Name
-      <input type="text" name="name" placeholder="Harry Potter" />
-    </label>
-
-    <label> First Year of Hogwarts
-      <input type="number" name="firstYearOfHogwarts" placeholder="1998" />
-    </label>
-
-        <label> Your house
-        <select name="house">
-
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          name="Wizardname"
+          placeholder="Your Wizard name"
+          aria-label="Wizardname"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Your Password"
+          aria-label="password"
+        />
+      </div>
+      <div class="row">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Your Name"
+            aria-label="name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="number"
+            class="form-control"
+            name="firstYearOfHogwarts"
+            placeholder="Your First Year"
+            aria-label="firstYearOfHogwarts"
+          />
+        </div>
+        <div class="col">
+          <select name="house" class="form-select" aria-label="house">
+            <option selected>Your House</option>
             <option value="gryffindor">Gryffindor</option>
-             <option value="slytherin">Slytherin</option>
-              <option value="hufflepuff">Hufflepuff</option>
-               <option value="ravenclaw">Ravenclaw</option>
-        </select>
-    </label>
+            <option value="hufflepuff">Hufflepuff</option>
+            <option value="ravenclaw">Ravenclaw</option>
+            <option value="slytherin">Slytherin</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
-    <button type="submit">Sign Up</button>
-
+  <button type="submit" class="btn btn-light">Sign Up</button>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>

@@ -1,17 +1,29 @@
-<div id="login-form">
+<div id="form">
   <h2>Log In</h2>
   <form action="/auth/login" method="POST">
 
-    <label> Wizardname
-      <input type="text" name="Wizardname" placeholder="Your Wizardname" />
-    </label>
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          name="Wizardname"
+          placeholder="Your Wizard name"
+          aria-label="Wizardname"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Your Password"
+          aria-label="password"
+        />
+      </div>
+    </div>
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Log In</button>
-
+    <button type="submit" class="btn btn-light">Log In</button>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
