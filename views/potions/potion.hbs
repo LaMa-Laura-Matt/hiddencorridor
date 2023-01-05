@@ -1,0 +1,30 @@
+<section class="book-details">
+    <h2>{{potionName}}</h2>
+    <p>
+        Ingredients {{ingredients}} <br />
+    </p>
+    <p>
+        How to brew it {{method}} <br />
+    </p>
+    <p>
+        Time to brew {{potionTime}}
+    </p>
+    <p>
+        Difficulty {{difficulty}} <br />
+    </p>
+    <p>
+        Possible Side Effects {{sideEffects}}
+    </p>
+    
+    
+<a href="/hidden-corridor/{{_id}}/edit">Edit details</a>
+    <p>
+        <form action="/hidden-corridor/{{_id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+    </p>
+
+</section>
+
+<a href="/hidden-corridor">Back</a>
+

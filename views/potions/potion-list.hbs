@@ -1,0 +1,26 @@
+<h1>Wow how did you get in????<h1>
+{{#each potions}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{this.potionName}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Wizard Name</h6>
+    <p class="card-text">{{this.ingredients}}</p>
+    <a href="#" class="card-link">Like</a>
+    <a href="/hidden-corridor/{{_id}}" class="card-link">More Details</a>
+  </div>
+</div>
+{{/each}}
+
+<!--
+    {{#each potions}}
+<section>
+    <h2>{{this.potionName}}</h2>
+    <p>
+        Ingredients: {{this.ingredients}} <br />
+        Method: {{this.method}} <br />
+      
+    </p>
+
+</section>
+{{/each}}
+-->

@@ -30,6 +30,9 @@ app.use("/", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
+const potionRoutes = require("./routes/potion.routes");
+app.use("/", potionRoutes);
+
 const corridorRoutes = require("./routes/corridor.routes");
 app.use("/", corridorRoutes);
 
