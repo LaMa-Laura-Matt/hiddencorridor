@@ -87,10 +87,10 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { Wizardname, email, password } = req.body;
+  const { Wizardname, password } = req.body;
 
   // Check that Wizardname, email, and password are provided
-  if (Wizardname === "" || email === "" || password === "") {
+  if (Wizardname === "" || password === "") {
     res.status(400).render("auth/login", {
       errorMessage:
         "All fields are mandatory. Please provide Wizardname, email and password.",
@@ -108,7 +108,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   }
 
   // Search the database for a Wizard with the email submitted in the form
-  Wizard.findOne({ email })
+  Wizard.findOne({ Wizardname })
     .then((Wizard) => {
       // If the Wizard isn't found, send an error message that Wizard provided wrong credentials
       if (!Wizard) {
@@ -134,7 +134,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentWizard.password;
 
-          res.redirect("/");
+          res.redirect("/entrance-hall");
+          console.log("you are a wizard harry and are also logged in")
+          //res.render('users/user-profile', { userInSession: req.session.currentUser });
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
@@ -143,6 +145,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
+  console.log('this part works')
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -150,6 +153,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
     }
 
     res.redirect("/");
+    console.log('you are back with the muggles')
   });
 });
 
