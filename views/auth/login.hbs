@@ -1,6 +1,6 @@
 <body id="loginBody">
 
-<div id="form">
+<div id="loginForm">
   <h2>Login</h2>
   
 
@@ -13,6 +13,7 @@
           name="Wizardname"
           placeholder="Your Wizard name"
           aria-label="Wizardname"
+          bg-transparent
         />
       </div>
       <div class="col">
@@ -24,11 +25,11 @@
           aria-label="password"
         />
       </div>
+    
       
-      </form>
     </div>
   
-  <div id = "loginBtn"><button type="submit" class="btn btn-light">Log In</button></div>
+   <div id = "loginBtn"><button type="submit" class="btn btn-light">Log In</button></div>
     
 
     {{#if errorMessage}}

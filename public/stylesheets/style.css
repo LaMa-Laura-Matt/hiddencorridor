@@ -1,29 +1,26 @@
-
 @font-face {
   font-family: Magic School;
   src: url("../fonts/magic-school.one.ttf");
-  
 }
 
 @font-face {
   font-family: Parseltongue;
   src: url("../fonts/parseltongue.ttf");
-  }
+}
 
-  @font-face {
-    font-family: Lumos;
-    src: url("../fonts/LUMOS.TTF");
-    
-  }
-  
-  @font-face {
-    font-family: Wizard;
-    src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
-    
-  }
+@font-face {
+  font-family: Lumos;
+  src: url("../fonts/LUMOS.TTF");
+}
+
+@font-face {
+  font-family: Wizard;
+  src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
+}
 
 #mainNav {
-  font-family: "Wizard", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
   background-color: antiquewhite;
   opacity: 0.6;
   border-radius: 10px;
@@ -35,37 +32,53 @@
   background-image: url("../images/Hogwarts/hogwarts-from-gates.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #indexTitle {
-  font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 140px;
   color: antiquewhite;
   margin-top: 15vh;
   margin-bottom: 15vh;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-
-  }
-  
+}
 
 #indexLinks a {
   text-decoration: none;
   color: antiquewhite;
-  font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 5vh;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-
 #signupBody {
   padding: 50px;
-  font: 14px "Magic School", Helvetica, Arial, sans-serif;
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#signupBody h2{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 13vh;
+  color: antiquewhite;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top: 4vh;
+  margin-bottom: 5vh;
+  margin-left:14vw;
+}
+
+.signupForm {
+  width: 30vw;
+  margin: 2.5vh 10vw;
+}
+
+#signupBtn {
+  margin-left:21vw;
+  margin-top: 1vh;
 }
 
 #loginBody {
@@ -84,17 +97,16 @@
   justify-content: center;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 13vh;
+  color: antiquewhite;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin-top: 7vh;
   margin-bottom: 5vh;
-
 }
 
 #loginBtn {
   display: flex;
   justify-content: center;
 }
-
 
 #entranceBody {
   padding: 50px;
