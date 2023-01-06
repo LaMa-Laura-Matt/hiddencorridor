@@ -18,6 +18,8 @@
   src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
 }
 
+
+
 #mainNav {
   font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
@@ -25,6 +27,7 @@
   opacity: 0.6;
   border-radius: 10px;
   width: 80vw;
+  margin:auto
 }
 
 #indexBody {
@@ -109,11 +112,47 @@
 }
 
 #entranceBody {
+  height:100vh;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/Hogwarts/corridor.jpg");
-  background-size: 100vw, 100vh;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+}
+
+#entranceBody h3 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 10vh;
+  color: rgb(250, 235, 215);
+  opacity: 0.4;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top: 5vh;
+  margin-bottom: 0;
+  margin-left:10vw;
+  
+}
+
+#entranceBody h6 {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 3vh;
+  color: rgb(250, 235, 215);
+  opacity: 0.3;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left:5vw;
+  position: fixed;
+  bottom: 1vh;
+  left:3vw;
+  
+}
+
+#hiddenLink {
+  height:10vh;
+  width:5vw;
+  position:fixed;
+  top:27vh;
+  right:12vw;
+  
 }
 
 #potionsBody {
