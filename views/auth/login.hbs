@@ -1,11 +1,12 @@
 <body id="loginBody">
 
 <div id="form">
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
+  <h2>Login</h2>
+  
 
     <div class="row">
       <div class="col">
+         <form action="/auth/login" method="POST">
         <input
           type="text"
           class="form-control"
@@ -23,9 +24,12 @@
           aria-label="password"
         />
       </div>
+      
+      </form>
     </div>
-
-    <button type="submit" class="btn btn-light">Log In</button>
+  
+  <div id = "loginBtn"><button type="submit" class="btn btn-light">Log In</button></div>
+    
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
