@@ -27,10 +27,11 @@ router.get("/create-potion", (req, res, next) => {
 // POST Create a Potion
 router.post("/create-potion", (req, res, next) => {
   console.log("well... not too bad");
+  console.log(req.body);
   const newPotion = {
     potionName: req.body.potionName,
-    ingredients: req.body.ingredients,
     method: req.body.method,
+    ingredients: req.body.ingredients,
     potionTime: req.body.potionTime,
     difficulty: req.body.difficulty,
     sideEffects: req.body.sideEffects
