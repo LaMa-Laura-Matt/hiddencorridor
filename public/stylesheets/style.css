@@ -18,6 +18,11 @@
   src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
 }
 
+@font-face {
+  font-family: Tomatoes;
+  src: url("../fonts/Tomatoes-O8L8.ttf");
+}
+
 
 
 #mainNav {
@@ -157,8 +162,45 @@
 
 #potionsBody {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("../images/Hogwarts/wall.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("../images/Hogwarts/hidden-corridor.jpg");
+  background-size:cover;
+  background-repeat: no-repeat; 
 }
+
+#potionsBody h1 {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 8vh;
+  color: rgb(139, 211, 139);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin:2.5vh 21.5vw 2vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  background-color: rgb(150, 101, 37);
+  opacity: 0.8;
+  margin: 1 1 1 1;
+}
+
+.card-title1 {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 5vh;
+  color: black;
+}
+
+.card-text1 {
+  font-family: "Tomatoes", Helvetica, Arial, sans-serif;
+  font-size: 3vh;
+  color: black;
+}
+
+.card-subtitle1 {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 3vh;
+  color: black;}
