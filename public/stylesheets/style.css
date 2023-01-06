@@ -46,6 +46,7 @@
   color: white;
   margin-top: 15vh;
   margin-bottom: 15vh;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 
   }
   
@@ -55,7 +56,7 @@
   color: white;
   font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 5vh;
-
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 
