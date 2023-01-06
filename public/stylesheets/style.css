@@ -1,26 +1,44 @@
+
+@font-face {
+  font-family: Magic School;
+  src: url("../fonts/magic-school.one.ttf");
+  font-size: 5vh;
+}
+
 #indexBody {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/Hogwarts/hogwarts-from-gates.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #indexTitle {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: larger;
-  
+  font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 140px;
+  color: white;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(186, 134, 245));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent,
   }
   
-  #indexLinks {
-    text-decoration: none;
-    color: white;
-  
-  }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5vh;
+
+}
+
 
 #signupBody {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Magic School", Helvetica, Arial, sans-serif;
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
