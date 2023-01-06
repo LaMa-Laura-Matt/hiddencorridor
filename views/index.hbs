@@ -1,32 +1,9 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<body id="indexBody">
 
-<!--
-<div id="form">
-    <h2>Login</h2>
+<div id="indexTitle"><H2>Welcome to Hogwarts</H2></div>
 
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-
-    <form action="/login" method="POST">
-
-        <label> Wizard Name
-            <input type="string" name="wizardname" placeholder="theChosenOne" required />
-        </label>
-
-        <label>Password
-            <input type="password" name="password" placeholder="********" required />
-        </label>
-
-        <button type="submit">Login</button>
-
-    </form>
+<div id="indexLinks"><a href="/auth/signup">Sign Up</a>
+  <a href="/auth/login">Login</a>
+  <a href="www.google.com">Im a muggle</a>
 </div>
--->
-<a href="/auth/signup">Register</a>
-<a href="/auth/login">Login</a>
-<a href="/auth/logout">Logout</a>
-<form action="/auth/logout" method="POST">
-                  <button>Logout</button>
-               </form>
+</body>

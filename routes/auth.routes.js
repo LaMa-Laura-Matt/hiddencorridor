@@ -144,7 +144,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 // GET /auth/logout
-router.get("/logout", isLoggedIn, (req, res) => {
+router.get("/logout", (req, res) => {
   console.log('this part works')
   req.session.destroy((err) => {
     if (err) {
