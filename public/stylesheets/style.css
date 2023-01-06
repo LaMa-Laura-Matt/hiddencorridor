@@ -5,6 +5,12 @@
   font-size: 5vh;
 }
 
+
+#mainNav {
+  background-color: antiquewhite;
+  opacity: 0.6;
+}
+
 #indexBody {
   padding: 50px;
   background-image: url("../images/Hogwarts/hogwarts-from-gates.jpg");
@@ -21,9 +27,7 @@
   color: white;
   margin-top: 15vh;
   margin-bottom: 15vh;
-  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(186, 134, 245));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent,
+
   }
   
 
