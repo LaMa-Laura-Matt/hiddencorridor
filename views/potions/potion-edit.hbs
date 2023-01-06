@@ -1,71 +1,81 @@
 <body id="potionsBody">
 
-<h2>Make changes to: {{potionName}}</h2>
+  <h2>Make changes to: {{potionName}}</h2>
 
-<form action="/hidden-corridor/{{_id}}/edit" method="POST">
+  <form action="/hidden-corridor/{{_id}}/edit" method="POST">
 
     <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Potion Name</label>
+      <label class="form-label">Potion Name
         <textarea
           type="text"
           class="form-control"
           name="potionName"
           aria-label="potionName"
-          rows="1">{{potionName}}
+          rows="1"
+        >{{potionName}}
         </textarea>
-      </div>
+      </label>
+    </div>
 
-      <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Ingredients</label>
-        <textarea
-          type="text"
-          class="form-control"
-          name="ingredients"
-          aria-label="ingredients"
-          rows="5">{{ingredients}}
-        </textarea>
-      </div>
+    <div class="col">
+      <label class="form-label">Ingredients
+        <div id="updateIngredients">
+          {{#each ingredients}}
+            <li>
+              <br /><input type="text" name="ingredients" value={{this}} />
+              <input type="button" value="-" onClick="removeInput(this);" />
+            </li>
+          {{/each}}
+          <input type="button" value="+" onClick="addInputInUpdatePotion();" />
+        </div>
+      </label>
+    </div>
 
-      <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Method</label>
+    <div class="col">
+      <label class="form-label">Method
         <textarea
           type="text"
           class="form-control"
           name="method"
           aria-label="method"
-          rows="5">{{method}}
+          rows="5"
+        >{{method}}
         </textarea>
-      </div>
-
-        <div class="col">
-          <label class="form-label">Difficulty</label>
-             <select name="difficulty" class="form-select" aria-label="difficulty">
-            <option selected>{{difficulty}}</option>
-            <option value="squib">Squib</option>
-            <option value="firstYear">First Year</option>
-            <option value="owlLevel">OWL Level</option>
-            <option value="newtLevel">NEWT Level</option>
-            <option value="professor">Professor</option>
-          </select>
-        </div>
-        
-         <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Side Effects</label>
-        <textarea
-          type="text"
-          class="form-control"
-          name="sideEffects"
-          aria-label="sideEffects"
-          rows="1">{{sideEffects}}
-        </textarea>
-      </div>
-      </div>
+      </label>
     </div>
+
+    <div class="col">
+      <label class="form-label">Difficulty
+      <select name="difficulty" class="form-select" aria-label="difficulty">
+        <option selected>{{difficulty}}</option>
+        <option value="squib">Squib</option>
+        <option value="firstYear">First Year</option>
+        <option value="owlLevel">OWL Level</option>
+        <option value="newtLevel">NEWT Level</option>
+        <option value="professor">Professor</option>
+      </select>
+      </label>
+    </div>
+
+    <div class="col">
+      <label class="form-label">Side Effects
+      <textarea
+        type="text"
+        class="form-control"
+        name="sideEffects"
+        aria-label="sideEffects"
+        rows="1"
+      >{{sideEffects}}
+      </textarea>
+      </label>
+    </div>
+
+
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
 
     <button type="submit" class="btn btn-light">Brewing.. </button>
-</form>
+  </form>
 
 </body>
