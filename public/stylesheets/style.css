@@ -2,13 +2,32 @@
 @font-face {
   font-family: Magic School;
   src: url("../fonts/magic-school.one.ttf");
-  font-size: 5vh;
+  
 }
 
+@font-face {
+  font-family: Parseltongue;
+  src: url("../fonts/parseltongue.ttf");
+  }
+
+  @font-face {
+    font-family: Lumos;
+    src: url("../fonts/LUMOS.TTF");
+    
+  }
+  
+  @font-face {
+    font-family: Wizard;
+    src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
+    
+  }
 
 #mainNav {
+  font-family: "Wizard", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: antiquewhite;
   opacity: 0.6;
+  border-radius: 10px;
+  width: 80vw;
 }
 
 #indexBody {
@@ -31,7 +50,7 @@
   }
   
 
-a {
+#indexLinks a {
   text-decoration: none;
   color: white;
   font-family: "Magic School", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
