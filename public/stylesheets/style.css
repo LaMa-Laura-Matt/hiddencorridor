@@ -1,12 +1,52 @@
-body {
+#indexBody {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Hogwarts/hogwarts-from-gates.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-a {
-  color: #00b7ff;
+#indexTitle {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+  
+  }
+  
+  #indexLinks {
+    text-decoration: none;
+    color: white;
+  
+  }
+
+#signupBody {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Hogwarts/sorting-hat.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-h1 {
-  color: 15px;
+#loginBody {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Hogwarts/entrance-hall.jpg");
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+#entranceBody {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Hogwarts/corridor.jpg");
+  background-size: 100vw, 100vh;
+  background-repeat: no-repeat;
+}
+
+#potionsBody {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Hogwarts/wall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }

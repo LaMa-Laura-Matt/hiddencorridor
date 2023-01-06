@@ -1,3 +1,7 @@
+
+const path = require("path")
+
+
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require("dotenv").config();
@@ -35,6 +39,8 @@ app.use("/", potionRoutes);
 
 const corridorRoutes = require("./routes/corridor.routes");
 app.use("/", corridorRoutes);
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
