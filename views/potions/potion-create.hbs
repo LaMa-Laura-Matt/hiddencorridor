@@ -5,7 +5,7 @@
 
     <div class="row">
       <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Potion Name</label>
+        <label class="form-label">Potion Name
         <input
           type="text"
           class="form-control"
@@ -13,18 +13,20 @@
           placeholder="Polyjuice"
           aria-label="potionName"
         />
+        </label>
       </div>
 
       <div id="formulario" class="col">
-        <label class="form-label">Ingredients</label>
+        <label class="form-label">Ingredients
         <div>
         <br><input type="text" name="ingredients"> 
       </div>
       <input type="button" value="+" onClick="addInput();">
+      </label>
       </div>
 
       <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Method</label>
+        <label class="form-label">Method
         <textarea
           type="text"
           class="form-control"
@@ -32,10 +34,11 @@
           aria-label="method"
           rows="5">
         </textarea>
+        </label>
       </div>
 
         <div class="col">
-          <label class="form-label">Difficulty</label>
+          <label class="form-label">Difficulty
              <select name="difficulty" class="form-select" aria-label="difficulty">
             <option selected>Choose difficulty</option>
             <option value="squib">Squib</option>
@@ -44,10 +47,11 @@
             <option value="newtLevel">NEWT Level</option>
             <option value="professor">Professor</option>
           </select>
+          </label>
         </div>
         
         <div class="col">
-          <label class="form-label">Side Effects</label>
+          <label class="form-label">Side Effects
           <input
             type="text"
             class="form-control"
@@ -55,6 +59,7 @@
             placeholder="what happens after you drink this!?!?!?"
             aria-label="sideEffects"
           />
+          </label>
         </div>
       </div>
     </div>
@@ -62,7 +67,7 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
 
-    <button type="submit" class="btn btn-light">Brewing.. </button>
+    <button type="submit" class="btn btn-light"> Create your poison </button>
 </form>
 
 </body>
