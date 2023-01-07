@@ -165,6 +165,9 @@
   background-image: url("../images/Hogwarts/hidden-corridor.jpg");
   background-size:cover;
   background-repeat: no-repeat; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #potionsBody h1 {
@@ -204,3 +207,7 @@
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 3vh;
   color: black;}
+
+.potion-details {
+  color: antiquewhite
+}
