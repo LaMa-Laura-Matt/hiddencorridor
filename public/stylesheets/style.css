@@ -89,6 +89,20 @@
   margin-top: 1vh;
 }
 
+p.error {
+  font-family: 'Wizard', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: antiquewhite;
+  font-size: 2vh;
+  margin-top:2vh;
+  margin-left:10vw;
+}
+
+span#message {
+  font-family: 'Wizard', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2vh;
+  padding-top:2vh;
+}
+
 #loginBody {
   display: flex;
   flex-direction: column;
