@@ -49,9 +49,15 @@
   font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 140px;
   color: antiquewhite;
-  margin-top: 15vh;
+  margin-top: 10vh;
   margin-bottom: 15vh;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#indexLinks {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #indexLinks a {
@@ -62,12 +68,19 @@
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+#hogwartscrest {
+  height:45vh;
+  position: absolute;
+  bottom:5vh;
+  left:5vw;
+}
+
 #signupBody {
   padding: 50px;
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
+} 
 
 #signupBody h2{
   font-family: "Magic School", Helvetica, Arial, sans-serif;
@@ -257,10 +270,7 @@ span#message {
   background-size: cover;
 }
 
-#hufflepuffCommomRoom {
-  background-image: url("../images/Hogwarts/hufflepuff-common.jpg");
-  background-size: cover;
-}
+
 
 #ravenclawCommomRoom {
   padding:50px;
@@ -279,7 +289,6 @@ span#message {
   text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
   margin-top:5vh;
 }
-
 
 #ravenclawCommomRoom section {
 position:fixed;
@@ -301,11 +310,119 @@ left:15vw;
   text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
 }
 
-#slytherinCommomRoom {
-  background-image: url("../images/Hogwarts/slytherin-common.jpg");
-  background-size: cover;
+#hufflepuffCommomRoom {
+  padding:50px;
+  background-image: url("../images/Hogwarts/hufflepuff-common.jpg");
+  background-size: cover;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+#hufflepuffCommomRoom h2 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 12vh;
+  color: yellow;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top:5vh;
+}
+
+#hufflepuffCommomRoom section {
+position:fixed;
+top:40vh;
+left:15vw;
+}
+
+#hufflepuffCommomRoom section h3{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 9vh;
+  color: yellow;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#hufflepuffCommomRoom section h5{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 7vh;
+  color: black;
+  text-shadow: -2px 0 yellow, 0 2px yellow, 2px 0 yellow, 0 -2px yellow;
+}
+
+#slytherinCommomRoom {
+  padding:50px;
+  background-image: url("../images/Hogwarts/slytherin-common.jpg");
+  background-size: cover;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#slytherinCommomRoom h2 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 12vh;
+  color: green;
+  text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
+  margin-top:5vh;
+}
+
+#slytherinCommomRoom section {
+position:fixed;
+top:40vh;
+left:15vw;
+}
+
+#slytherinCommomRoom section h3{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 9vh;
+  color: green;
+  text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
+}
+
+#slytherinCommomRoom section h5{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 7vh;
+  color: silver;
+  text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
+}
+
+#gryffindorCommomRoom {
+  padding:50px;
+  background-image: url("../images/Hogwarts/gryffindor-common.jpg");
+  background-size: cover;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#gryffindorCommomRoom h2 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 12vh;
+  color: red;
+  text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
+  margin-top:5vh;
+}
+
+#gryffindorCommomRoom section {
+position:fixed;
+top:40vh;
+left:15vw;
+}
+
+#gryffindorCommomRoom section h3{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 9vh;
+  color: red;
+  text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
+}
+
+#gryffindorCommomRoom section h5{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 7vh;
+  color: gold;
+  text-shadow: -2px 0 red, 0 2px red, 2px 0 red, 0 -2px red;
+}
 .crest {
   height:35vh;
   position:fixed;
