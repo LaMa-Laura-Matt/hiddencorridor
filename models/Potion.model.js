@@ -25,11 +25,18 @@ const PotionSchema = new Schema(
       type: String,
       required: false
     },
+    wizard: {
+      type: Schema.Types.ObjectId,
+      ref: "Wizard",
+      required: true
+  },
+
     sideEffects: {
       type:String,
       required: false
     }
   },
+  
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,

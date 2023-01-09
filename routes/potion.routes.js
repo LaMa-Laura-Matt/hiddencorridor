@@ -8,7 +8,9 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 // Hidden Corridor
 router.get("/hidden-corridor", isLoggedIn,(req, res, next) => {
   //here we will list the potions so will need to do a .find())
+  
   Potion.find()
+  .populate("wizard")
     .then((potionsFromDB) => {
       console.log("welcome to the HC");
       res.render("potions/potion-list", { potions: potionsFromDB });
@@ -28,14 +30,15 @@ router.get("/create-potion", isLoggedIn, (req, res, next) => {
 // POST Create a Potion
 router.post("/create-potion", isLoggedIn, (req, res, next) => {
   console.log("well... not too bad");
-  console.log(req.body);
+  console.log(req.session.currentWizard);
   const newPotion = {
     potionName: req.body.potionName,
     method: req.body.method,
     ingredients: req.body.ingredients,
     potionTime: req.body.potionTime,
     difficulty: req.body.difficulty,
-    sideEffects: req.body.sideEffects
+    sideEffects: req.body.sideEffects,
+    wizard:req.session.currentWizard
   };
 
   Potion.create(newPotion)
@@ -55,7 +58,7 @@ router.get("/hidden-corridor/:potionid", isLoggedIn,(req, res, next) => {
   const id = req.params.potionid;
 
   Potion.findById(id)
-      //.populate("author")
+      .populate("wizard")
       .then(potionDetails => {
           res.render("potions/potion", potionDetails);
       })
@@ -72,6 +75,7 @@ router.get("/hidden-corridor/:potionId/edit", isLoggedIn, (req, res, next) => {
   const id = req.params.potionId;
 
   Potion.findById(id)
+ 
       .then((potionDetails) => {
           console.log(potionDetails);
 
