@@ -98,7 +98,7 @@ router.get("/login", isLoggedOut, (req, res) => {
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { Wizardname, password } = req.body;
 
-  // Check that Wizardname, email, and password are provided
+  // Check that Wizardname, and password are provided
   if (Wizardname === "" || password === "") {
     res.status(400).render("auth/login", {
       errorMessage:
@@ -142,10 +142,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           req.session.currentWizard = Wizard.toObject();
           // Remove the password field
           delete req.session.currentWizard.password;
-
-          res.redirect("/entrance-hall");
-          console.log("you are a wizard harry and are also logged in")
-          //res.render('users/user-profile', { userInSession: req.session.currentUser });
+        
+          res.redirect(`/auth/profile/${Wizard._id}`);
+          //res.render(`auth/profile/${Wizard._id}`, { userInSession: req.session.currentWizard });
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
@@ -154,7 +153,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", (req, res) => {
-  console.log('this part works')
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -162,8 +160,26 @@ router.get("/logout", (req, res) => {
     }
 
     res.redirect("/");
-    console.log('you are back with the muggles')
+   
   });
 });
+
+//Profile Page
+router.get("/profile/:wizardId", isLoggedIn, (req, res, next) => {
+    const wizardId = req.params.wizardId;
+    console.log(wizardId)
+    Wizard.findById(wizardId)
+    //.populate("potion")
+    .then ((wizardDetails) => {
+        res.render("auth/profile", {wizardDetails: wizardDetails})
+    })
+    .catch(err => {
+      console.log("error getting wizard details for profile page  from DB", err);
+      next();
+  })
+});
+
+
+
 
 module.exports = router;
