@@ -32,7 +32,7 @@
   opacity: 0.6;
   border-radius: 10px;
   width: 80vw;
-  margin:auto
+  margin:auto;
 }
 
 #indexBody {
@@ -263,11 +263,52 @@ span#message {
 }
 
 #ravenclawCommomRoom {
+  padding:50px;
   background-image: url("../images/Hogwarts/ravenclaw-common.jpg");
-  background-size: cover;
+  background-size: cover;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ravenclawCommomRoom h2 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 12vh;
+  color: blue;
+  text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
+  margin-top:5vh;
+}
+
+
+#ravenclawCommomRoom section {
+position:fixed;
+top:40vh;
+left:15vw;
+}
+
+#ravenclawCommomRoom section h3{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 9vh;
+  color: blue;
+  text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
+}
+
+#ravenclawCommomRoom section h5{
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 7vh;
+  color: silver;
+  text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
 }
 
 #slytherinCommomRoom {
   background-image: url("../images/Hogwarts/slytherin-common.jpg");
   background-size: cover;
+}
+
+.crest {
+  height:35vh;
+  position:fixed;
+  top:42vh;
+  right:20vw;
 }
