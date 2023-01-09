@@ -2,23 +2,25 @@
 
   <h1>Wow how did you get in????</h1>
   <!-- <div class="container"> </div>-->
-  <div class="container">
+  <div class="row">
     {{#each potions}}
-      <div class="card" style="width: 20vw;">
-        <div class="card-body">
-          <h5 class="card-title1">{{this.potionName}}</h5>
-          <!-- listing each of the ingredients here -->
-          <ul class="list-group list-group-flush">
-            {{#each this.ingredients}}
-              <li class="list-group-item">{{this}}</li>
-            {{/each}}
-          </ul>
-          <h6
-            class="card-subtitle1 mb-2 text-muted"
-          >{{this.wizard.Wizardname}}</h6>
-          <div class="card-footer">
-            <a href="#" class="card-link1">Like</a>
-            <a href="/hidden-corridor/{{_id}}" class="card-link1">More Details</a>
+      <div class="col-sm">
+        <div class="card" style="width: 300px">
+          <div class="card-body">
+            <h5 class="card-title1">{{this.potionName}}</h5>
+            <!-- listing each of the ingredients here -->
+            <ul class="list-elements">
+              {{#each this.ingredients}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            <h6
+              class="card-subtitle1 mb-2 text-muted"
+            >{{this.wizard.Wizardname}}</h6>
+            <div class="card-footer">
+              <a href="#" class="card-link1">Like</a>
+              <a href="/hidden-corridor/{{_id}}" class="card-link1">More Details</a>
+            </div>
           </div>
         </div>
       </div>
