@@ -22,6 +22,12 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+app.use( (req, res, next) => {
+    app.locals.wizardDetails = req.session.currentWizard; //store Wizard details in app.locals (so that is is available in handlebars)
+    next();
+});
+
+
 const capitalize = require("./utils/capitalize");
 const projectName = "hiddencorridor";
 
