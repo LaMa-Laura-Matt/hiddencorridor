@@ -1,31 +1,34 @@
 <body id="potionsBody">
 
 <section class="potion-details">
-    <h1>{{potionName}}</h1>
-    <h5>Brewed by: {{wizard.Wizardname}}</h5>
+    <h1>{{potionDetails.potionName}}</h1>
+    <h5>Brewed by: {{potionDetails.wizard.Wizardname}}</h5>
     <p>
-        Ingredients {{ingredients}} <br />
+        Ingredients {{potionDetails.ingredients}} <br />
     </p>
     <p>
-        How to brew it {{method}} <br />
+        How to brew it {{potionDetails.method}} <br />
     </p>
     <p>
-        Time to brew {{potionTime}}
+        Time to brew {{potionDetails.potionTime}}
     </p>
     <p>
-        Difficulty {{difficulty}} <br />
+        Difficulty {{potionDetails.difficulty}} <br />
     </p>
     <p>
-        Possible Side Effects {{sideEffects}}
+        Possible Side Effects {{potionDetails.sideEffects}}
     </p>
     
-    
-<a href="/hidden-corridor/{{_id}}/edit">Edit details</a>
+    {{#if isOwner}}
+<a href="/hidden-corridor/{{potionDetails._id}}/edit">Edit details</a>
     <p>
-        <form action="/hidden-corridor/{{_id}}/delete" method="POST">
+        <form action="/hidden-corridor/{{potionDetails._id}}/delete" method="POST">
             <button>Delete</button>
+           
         </form>
     </p>
+     {{else}}
+            {{/if}}
 
 </section>
 
