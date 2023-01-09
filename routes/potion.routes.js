@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Potion = require("../models/Potion.model");
 const Wizard = require("../models/Wizard.model");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 
 // Hidden Corridor
-router.get("/hidden-corridor", (req, res, next) => {
+router.get("/hidden-corridor", isLoggedIn,(req, res, next) => {
   //here we will list the potions so will need to do a .find())
   Potion.find()
     .then((potionsFromDB) => {
@@ -19,13 +20,13 @@ router.get("/hidden-corridor", (req, res, next) => {
 });
 
 // Create a Potion Form
-router.get("/create-potion", (req, res, next) => {
+router.get("/create-potion", isLoggedIn, (req, res, next) => {
   console.log("ohh think you can brew do you?");
   res.render("potions/potion-create");
 });
 
 // POST Create a Potion
-router.post("/create-potion", (req, res, next) => {
+router.post("/create-potion", isLoggedIn, (req, res, next) => {
   console.log("well... not too bad");
   console.log(req.body);
   const newPotion = {
@@ -50,7 +51,7 @@ router.post("/create-potion", (req, res, next) => {
 
 
 //READ: Potion details
-router.get("/hidden-corridor/:potionid", (req, res, next) => {
+router.get("/hidden-corridor/:potionid", isLoggedIn,(req, res, next) => {
   const id = req.params.potionid;
 
   Potion.findById(id)
@@ -66,7 +67,7 @@ router.get("/hidden-corridor/:potionid", (req, res, next) => {
 
 
 //display the update potion form
-router.get("/hidden-corridor/:potionId/edit", (req, res, next) => {
+router.get("/hidden-corridor/:potionId/edit", isLoggedIn, (req, res, next) => {
 
   const id = req.params.potionId;
 
@@ -84,7 +85,7 @@ router.get("/hidden-corridor/:potionId/edit", (req, res, next) => {
 module.exports = router;
 
 //UPDATE: process form
-router.post("/hidden-corridor/:potionId/edit", (req, res, next) => {
+router.post("/hidden-corridor/:potionId/edit", isLoggedIn, (req, res, next) => {
   const potionId = req.params.potionId;
 
   const newDetails = {
@@ -108,7 +109,7 @@ router.post("/hidden-corridor/:potionId/edit", (req, res, next) => {
 });
 
 //DELETE
-router.post("/hidden-corridor/:potionId/delete", (req, res, next) => {
+router.post("/hidden-corridor/:potionId/delete", isLoggedIn, (req, res, next) => {
   Potion.findByIdAndDelete(req.params.potionId)
       .then(() => {
           res.redirect("/hidden-corridor");
