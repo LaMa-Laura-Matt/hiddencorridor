@@ -173,9 +173,20 @@ span#message {
   right:12vw;
 }
  
-#hiddenLink:hover #alohamora{
+#hiddenLink:hover + #alohamora{
   display:block;
-  height: 50vh;
+  height:25vh;
+  position:fixed;
+  top:40vh;
+  right:40vw;
+}
+
+#alohamora {
+  display: none;
+  height:25vh;
+  position:fixed;
+  top:40vh;
+  right:40vw;
 }
 
 
