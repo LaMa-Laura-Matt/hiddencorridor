@@ -222,6 +222,11 @@ span#message {
   font-size: 3vh;
   color: black;
 }
+.list-elements {
+  font-family: "Tomatoes", Helvetica, Arial, sans-serif;
+  font-size: 3vh;
+  color: black;
+}
 
 .potion-details {
   color: antiquewhite

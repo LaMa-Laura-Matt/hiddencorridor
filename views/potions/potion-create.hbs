@@ -1,64 +1,71 @@
 <body id="potionsBody">
 
-<h2>ohh think you can brew do you?</h2>
-<form action="/create-potion" method="POST">
+  <h2>ohh think you can brew do you?</h2>
+  <form action="/create-potion" method="POST">
 
     <div class="row">
       <div class="col">
         <label class="form-label">Potion Name
-        <input
-          type="text"
-          class="form-control"
-          name="potionName"
-          placeholder="Polyjuice"
-          aria-label="potionName"
-        />
+          <input
+            type="text"
+            class="form-control"
+            name="potionName"
+            placeholder="Polyjuice"
+            aria-label="potionName"
+          />
         </label>
       </div>
+    </div>
 
+    <div class="row">
       <div id="formulario" class="col">
         <label class="form-label">Ingredients
-        <div>
-        <br><input type="text" name="ingredients"> 
-      </div>
-      <input type="button" value="+" onClick="addInput();">
-      </label>
+          <div>
+            <br /><input type="text" name="ingredients" />
+          </div>
+        </label>
+        <input type="button" class="btn btn-light" value="+" onClick="addInput();" />
       </div>
 
       <div class="col">
         <label class="form-label">Method
-        <textarea
-          type="text"
-          class="form-control"
-          name="method"
-          aria-label="method"
-          rows="5">
-        </textarea>
-        </label>
-      </div>
-
-        <div class="col">
-          <label class="form-label">Difficulty
-             <select name="difficulty" class="form-select" aria-label="difficulty">
-            <option selected>Choose difficulty</option>
-            <option value="squib">Squib</option>
-            <option value="firstYear">First Year</option>
-            <option value="owlLevel">OWL Level</option>
-            <option value="newtLevel">NEWT Level</option>
-            <option value="professor">Professor</option>
-          </select>
-          </label>
-        </div>
-        
-        <div class="col">
-          <label class="form-label">Side Effects
-          <input
+          <textarea
             type="text"
             class="form-control"
-            name="sideEffects"
-            placeholder="what happens after you drink this!?!?!?"
-            aria-label="sideEffects"
-          />
+            name="method"
+            aria-label="method"
+            rows="5"
+          >
+          </textarea>
+        </label>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="form-label">Difficulty
+            <select
+              name="difficulty"
+              class="form-select"
+              aria-label="difficulty"
+            >
+              <option selected>Choose difficulty</option>
+              <option value="squib">Squib</option>
+              <option value="firstYear">First Year</option>
+              <option value="owlLevel">OWL Level</option>
+              <option value="newtLevel">NEWT Level</option>
+              <option value="professor">Professor</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="col">
+          <label class="form-label">Side Effects
+            <input
+              type="text"
+              class="form-control"
+              name="sideEffects"
+              placeholder="what happens after you drink this!?!?!?"
+              aria-label="sideEffects"
+            />
           </label>
         </div>
       </div>
@@ -68,6 +75,6 @@
     {{/if}}
 
     <button type="submit" class="btn btn-light"> Create your poison </button>
-</form>
+  </form>
 
 </body>
