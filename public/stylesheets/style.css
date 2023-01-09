@@ -220,8 +220,18 @@ span#message {
 .card-subtitle1 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 3vh;
-  color: black;}
+  color: black;
+}
 
 .potion-details {
   color: antiquewhite
+}
+
+#intro {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 4vh;
+  color: antiquewhite;
+  margin-top: 2vh;
+  width:70vw;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
