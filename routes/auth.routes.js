@@ -22,10 +22,10 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { Wizardname, name, password, firstYearOfHogwarts, house } = req.body;
+  const { Wizardname, name, password, confirmPassword, firstYearOfHogwarts, house } = req.body;
 
   // Check that Wizardname, email, and password are provided
-  if (Wizardname === "" || name === "" || password === "" || firstYearOfHogwarts === "" || house === "" ) {
+  if (Wizardname === "" || name === "" || password === "" || firstYearOfHogwarts === "" || house === "") {
     res.status(400).render("auth/signup", {
       errorMessage:
         "All fields are mandatory. Please provide your Wizardname, email and password.",
@@ -37,6 +37,15 @@ router.post("/signup", isLoggedOut, (req, res) => {
   if (password.length < 6) {
     res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 6 characters long.",
+    });
+
+    return;    
+  }
+
+  if (password !== confirmPassword) {
+    res.status(400).render("auth/signup", {
+      errorMessage:
+        "Both passwords must match",
     });
 
     return;

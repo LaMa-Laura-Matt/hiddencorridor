@@ -21,7 +21,23 @@
           name="password"
           placeholder="Your Password"
           aria-label="password"
+          id="password"
+          onkeyup='check();'
         />
+      </div>
+
+       <div class="col signupForm">
+        <input
+          type="password"
+          class="form-control"
+          name="confirmPassword"
+          placeholder="Confirm your Password"
+          aria-label="confirmPassword"
+          id="confirmPassword"
+          
+          onkeyup='check();'
+        />
+        <span id='message'></span>
       </div>
       
         <div class="col signupForm">
