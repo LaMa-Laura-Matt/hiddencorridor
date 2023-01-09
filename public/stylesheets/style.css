@@ -236,3 +236,23 @@ span#message {
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 
 }
+
+#gryffindorCommomRoom {
+  background-image: url("../images/Hogwarts/gryffindor-common.jpg");
+  background-size: cover;
+}
+
+#hufflepuffCommomRoom {
+  background-image: url("../images/Hogwarts/hufflepuff-common.jpg");
+  background-size: cover;
+}
+
+#ravenclawCommomRoom {
+  background-image: url("../images/Hogwarts/ravenclaw-common.jpg");
+  background-size: cover;
+}
+
+#slytherinCommomRoom {
+  background-image: url("../images/Hogwarts/slytherin-common.jpg");
+  background-size: cover;
+}

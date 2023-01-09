@@ -1,2 +1,19 @@
-<h2>Welcome to the GRYFFINDOR ???? Common Room WIZARD NAME</h2>
+{{#if gryffindor}}
+<body id="gryffindorCommomRoom">
+{{else if hufflepuff}}
+<body id="hufflepuffCommomRoom">
+{{else if ravenclaw}}
+<body id="ravenclawCommomRoom">
+{{else }}
+<body id="slytherinCommomRoom">
+{{/if}}
 
+
+<h2>Welcome to the {{wizard.house}} Common Room {{wizard.Wizardname}}</h2>
+
+<h3>Profile</h3>
+<h5>{{wizard.name}}</h5>
+<h5>Belongs to {{wizard.house}}</h5>
+<h5>First year attending Hogwarts was {{wizard.firstYearOfHogwarts}}</h5>
+
+</body>

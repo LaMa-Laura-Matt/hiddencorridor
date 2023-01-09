@@ -22,10 +22,23 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { Wizardname, name, password, confirmPassword, firstYearOfHogwarts, house } = req.body;
+  const {
+    Wizardname,
+    name,
+    password,
+    confirmPassword,
+    firstYearOfHogwarts,
+    house,
+  } = req.body;
 
   // Check that Wizardname, email, and password are provided
-  if (Wizardname === "" || name === "" || password === "" || firstYearOfHogwarts === "" || house === "") {
+  if (
+    Wizardname === "" ||
+    name === "" ||
+    password === "" ||
+    firstYearOfHogwarts === "" ||
+    house === ""
+  ) {
     res.status(400).render("auth/signup", {
       errorMessage:
         "All fields are mandatory. Please provide your Wizardname, email and password.",
@@ -39,13 +52,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
       errorMessage: "Your password needs to be at least 6 characters long.",
     });
 
-    return;    
+    return;
   }
 
   if (password !== confirmPassword) {
     res.status(400).render("auth/signup", {
-      errorMessage:
-        "Both passwords must match",
+      errorMessage: "Both passwords must match",
     });
 
     return;
@@ -70,7 +82,13 @@ router.post("/signup", isLoggedOut, (req, res) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a Wizard and save it in the database
-      return Wizard.create({ Wizardname, name, password: hashedPassword, firstYearOfHogwarts, house });
+      return Wizard.create({
+        Wizardname,
+        name,
+        password: hashedPassword,
+        firstYearOfHogwarts,
+        house,
+      });
     })
     .then((Wizard) => {
       res.redirect("/auth/login");
@@ -142,7 +160,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           req.session.currentWizard = Wizard.toObject();
           // Remove the password field
           delete req.session.currentWizard.password;
-        
+
           res.redirect(`/auth/profile/${Wizard._id}`);
           //res.render(`auth/profile/${Wizard._id}`, { userInSession: req.session.currentWizard });
         })
@@ -160,26 +178,40 @@ router.get("/logout", (req, res) => {
     }
 
     res.redirect("/");
-   
   });
 });
 
 //Profile Page
 router.get("/profile/:wizardId", isLoggedIn, (req, res, next) => {
-    const wizardId = req.params.wizardId;
-    console.log(wizardId)
-    Wizard.findById(wizardId)
+  const wizardId = req.params.wizardId;
+
+  Wizard.findById(wizardId)
     //.populate("potion")
-    .then ((wizardDetails) => {
-        res.render("auth/profile", {wizardDetails: wizardDetails})
+    .then((wizardDetails) => {
+      let gryffindor = false;
+      let hufflepuff = false;
+      let ravenclaw = false;
+      let slytherin = false;
+
+      if (req.session.currentWizard.house === "gryffindor") {
+        gryffindor = true;
+      } else if (req.session.currentWizard.house === "hufflepuff") {
+        hufflepuff = true;
+      } else if (req.session.currentWizard.house === "ravenclaw") {
+        ravenclaw = true;
+      } else if (req.session.currentWizard.house === "slytherin") {
+        slytherin = true;
+      }
+      res.render("auth/profile", { wizard: wizardDetails, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin,});
     })
-    .catch(err => {
-      console.log("error getting wizard details for profile page  from DB", err);
+    .catch((err) => {
+      console.log(
+        "error getting wizard details for profile page  from DB",
+        err
+      );
       next();
-  })
+    });
 });
-
-
 
 
 module.exports = router;
