@@ -171,8 +171,13 @@ span#message {
   position:fixed;
   top:27vh;
   right:12vw;
-  
 }
+ 
+#hiddenLink:hover #alohamora{
+  display:block;
+  height: 50vh;
+}
+
 
 #potionsBody {
   padding: 50px;
@@ -192,12 +197,6 @@ span#message {
   margin:2.5vh 21.5vw 2vh;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
 
 .card {
   background-color: rgb(150, 101, 37);
