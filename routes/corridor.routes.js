@@ -5,10 +5,10 @@ const router = express.Router();
 
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-//Entrance Hall
-router.get("/entrance-hall", isLoggedIn, (req, res, next) => {
+//Fifth Floor
+router.get("/fifth-floor", isLoggedIn, (req, res, next) => {
  
-  res.render("corridor/entrance-hall");
+  res.render("corridor/fifth-floor");
 });
 
 module.exports = router;

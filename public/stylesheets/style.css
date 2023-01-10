@@ -143,7 +143,7 @@ span#message {
   justify-content: center;
 }
 
-#entranceBody {
+#fifthFloorBody {
   height:100vh;
   padding: 50px;
   background-image: url("../images/Hogwarts/corridor.jpg");
@@ -151,7 +151,7 @@ span#message {
   background-repeat: no-repeat;
 }
 
-#entranceBody h3 {
+#fifthFloorBody h3 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 10vh;
   color: rgb(250, 235, 215);
@@ -163,7 +163,7 @@ span#message {
   
 }
 
-#entranceBody h6 {
+#fifthFloorBody h6 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 3vh;
   color: rgb(250, 235, 215);
