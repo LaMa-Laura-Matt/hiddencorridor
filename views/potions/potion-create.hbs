@@ -1,10 +1,10 @@
 <body id="hiddenCorridorBody">
 
-  <h2>ohh think you can brew do you?</h2>
-  <form action="/create-potion" method="POST">
+  <h1>ohh think you can brew do you?</h1>
+  <form id="createPotionForm" action="/create-potion" method="POST">
 
     <div class="row">
-      <div class="col">
+      <div class="col text-center">
         <label class="form-label">Potion Name
           <input
             type="text"
@@ -15,32 +15,8 @@
           />
         </label>
       </div>
-    </div>
 
-    <div class="row">
-      <div id="formulario" class="col">
-        <label class="form-label">Ingredients
-          <div>
-            <br /><input type="text" name="ingredients" />
-          </div>
-        </label>
-        <input type="button" class="btn btn-light" value="+" onClick="addInput();" />
-      </div>
-
-      <div class="col">
-        <label class="form-label">Method
-          <textarea
-            type="text"
-            class="form-control"
-            name="method"
-            aria-label="method"
-            rows="5"
-          >
-          </textarea>
-        </label>
-      </div>
-      <div class="row">
-        <div class="col">
+      <div class="col text-center">
           <label class="form-label">Difficulty
             <select
               name="difficulty"
@@ -56,8 +32,36 @@
             </select>
           </label>
         </div>
+    </div>
 
-        <div class="col">
+    <div class="row">
+      <div class="col text-center">
+        <label class="form-label">Method
+          <textarea
+            type="text"
+            class="form-control"
+            name="method"
+            aria-label="method"
+            rows="5"
+          >
+          </textarea>
+        </label>
+      </div>
+      
+      <div id="formulario" class="col text-center">
+        <label class="form-label">Ingredients
+          
+            <br /><input type="text" name="ingredients" />
+          
+        </label>
+        <input type="button" class="btn btn-light" value="+" onClick="addInput();" />
+      </div>
+
+      
+      <div class="row">
+        
+
+        <div class="col text-center">
           <label class="form-label">Side Effects
             <input
               type="text"
@@ -68,13 +72,18 @@
             />
           </label>
         </div>
+        <div class="col"><button type="submit" class="btn btn-success fixed-bottom"> Create your poison </button></div>
       </div>
+      
+      </div>
+
+
     </div>
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
 
-    <button type="submit" class="btn btn-light"> Create your poison </button>
+    
   </form>
 
 </body>
