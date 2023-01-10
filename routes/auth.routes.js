@@ -41,7 +41,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   ) {
     res.status(400).render("auth/signup", {
       errorMessage:
-        "All fields are mandatory. Please provide your Wizardname, email and password.",
+        "All fields are mandatory. Please provide your Wizardname, name, house, first year at Hogwarts and password.",
     });
 
     return;
@@ -99,7 +99,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       } else if (error.code === 11000) {
         res.status(500).render("auth/signup", {
           errorMessage:
-            "Wizardname and email need to be unique. Provide a valid Wizardname or email.",
+            "Wizardname is taken, please try again.",
         });
       } else {
         next(error);
@@ -120,7 +120,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   if (Wizardname === "" || password === "") {
     res.status(400).render("auth/login", {
       errorMessage:
-        "All fields are mandatory. Please provide Wizardname, email and password.",
+        "All fields are mandatory. Please provide Wizardname and password.",
     });
 
     return;

@@ -36,13 +36,14 @@
 }
 
 #indexBody {
-  padding: 50px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/hogwarts-from-gates.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #indexTitle {
@@ -76,7 +77,7 @@
 }
 
 #signupBody {
-  padding: 50px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -145,7 +146,7 @@ span#message {
 
 #fifthFloorBody {
   height:100vh;
-  padding: 50px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/corridor.jpg");
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
@@ -204,7 +205,7 @@ span#message {
 
 
 #hiddenCorridorBody {
-  padding: 50px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/hidden-corridor.jpg");
   background-size:cover;
   background-repeat: no-repeat; 
@@ -273,7 +274,7 @@ span#message {
 
 
 #ravenclawCommomRoom {
-  padding:50px;
+  padding:30px;
   background-image: url("../images/Hogwarts/ravenclaw-common.jpg");
   background-size: cover;  
   display: flex;
@@ -311,7 +312,7 @@ left:15vw;
 }
 
 #hufflepuffCommomRoom {
-  padding:50px;
+  padding:30px;
   background-image: url("../images/Hogwarts/hufflepuff-common.jpg");
   background-size: cover;  
   display: flex;

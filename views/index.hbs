@@ -4,6 +4,15 @@
 
   <div class="container text-center" id="indexLinks">
 
+  {{#if wizardDetails}}
+<div class="col">
+      <a href="/auth/profile/{{wizardDetails._id}}">Profile</a>
+    </div>
+    <div class="col">
+      <a href="/fifth-floor">5th Floor</a>
+    </div>
+
+  {{else}}
     <div class="col"></div>
     <div class="col">
       <a href="/auth/signup">Sign Up</a>
@@ -15,6 +24,7 @@
       <a href="{`//${www.google.com}`}">Im a muggle</a>
     </div>
     <div class="col"></div>
+    {{/if}}
 
   </div>
 
