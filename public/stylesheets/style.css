@@ -216,10 +216,11 @@ span#message {
 
 #hiddenCorridorBody h1 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 8vh;
-  color: rgb(139, 211, 139);
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  margin:2.5vh 21.5vw 2vh;
+  font-size: 10vh;
+  color: darkgreen;
+  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow, 0 -1px greenyellow;
+  margin-top:2.5vh;
+  margin-bottom: 2vh;
 }
 
 
@@ -254,6 +255,46 @@ span#message {
 
 .potion-details {
   color: antiquewhite
+}
+
+#createPotionForm label{
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 6vh;
+color: greenyellow;
+text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+}
+
+#createPotionForm input{
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+#createPotionForm textarea{
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+#createPotionForm select{
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+.btn-success {
+  position: relative;
+  top:10vh;
+  left:13vw;
+  background-color: yellowgreen;
+}
+
+input {
+  border-radius: 0.375rem;
+}
+
+input.btn.btn-light {
+  padding: 1px 6px;
 }
 
 #intro {
