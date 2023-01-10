@@ -307,7 +307,7 @@ left:15vw;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: silver;
-  text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
 }
 
 #hufflepuffCommomRoom {
@@ -345,7 +345,7 @@ left:15vw;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: black;
-  text-shadow: -2px 0 yellow, 0 2px yellow, 2px 0 yellow, 0 -2px yellow;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
 
 #slytherinCommomRoom {
@@ -383,7 +383,7 @@ left:15vw;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: silver;
-  text-shadow: -2px 0 green, 0 2px green, 2px 0 green, 0 -2px green;
+  text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
 }
 
 #gryffindorCommomRoom {
@@ -421,7 +421,7 @@ left:15vw;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: gold;
-  text-shadow: -2px 0 red, 0 2px red, 2px 0 red, 0 -2px red;
+  text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
 .crest {
   height:35vh;
