@@ -441,3 +441,7 @@ left:15vw;
   bottom:1vh;
   left:12vw;
 }
+
+#hiddenPotion {
+  display: none;
+}

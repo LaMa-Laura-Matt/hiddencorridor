@@ -39,7 +39,8 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
     potionTime: req.body.potionTime,
     difficulty: req.body.difficulty,
     sideEffects: req.body.sideEffects,
-    wizard:req.session.currentWizard
+    wizard:req.session.currentWizard,
+    numberOfLikes: 0
   };
 
   Potion.create(newPotion)

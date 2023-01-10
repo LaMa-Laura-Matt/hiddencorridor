@@ -18,7 +18,12 @@
               class="card-subtitle1 mb-2 text-muted"
             >{{this.wizard.Wizardname}}</h6>
             <div class="card-footer">
-              <a href="#" class="card-link1">Like</a>
+              <a href="#" class="card-link1"><img src="../../images/Hogwarts/icon-blue-wand.png" alt="wand icon"></a>
+              <p>
+                {{this.numberOfLikes}}
+                <a href="#" id="emptyPotion"><img src="../../images/Hogwarts/icon-empty-potion.png" alt="potion icon"></a>
+                <a href="#" id="emptyPotion"><img src="../../images/Hogwarts/icon-empty-potion.png" alt="potion icon"></a>
+              </p>
               <a href="/potions/{{_id}}" class="card-link1">More Details</a>
             </div>
           </div>
