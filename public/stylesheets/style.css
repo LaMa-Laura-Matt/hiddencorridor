@@ -49,8 +49,8 @@
   font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 140px;
   color: antiquewhite;
-  margin-top: 10vh;
-  margin-bottom: 15vh;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
@@ -69,10 +69,10 @@
 }
 
 #hogwartscrest {
-  height:45vh;
-  position: absolute;
-  bottom:5vh;
-  left:5vw;
+  max-height:45vh;
+  max-width: 33vw;
+  position: relative;
+  margin-top: 1vh;
 }
 
 #signupBody {
@@ -424,7 +424,7 @@ left:15vw;
   text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
 .crest {
-  height:35vh;
+  height:35;
   position:fixed;
   top:42vh;
   right:20vw;
