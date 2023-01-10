@@ -2,9 +2,9 @@
 
   <h1>Make changes to: {{potionName}}</h1>
 
-  <form action="/potions/{{_id}}/edit" method="POST">
-
-    <div class="col">
+  <form id="potionEditForm" action="/potions/{{_id}}/edit" method="POST">
+    <div class="row">
+    <div class="col text-center">
       <label class="form-label">Potion Name
         <textarea
           type="text"
@@ -17,8 +17,8 @@
       </label>
     </div>
 
-    <div class="col">
-      <label class="form-label">Ingredients
+    <div class="col text-center">
+      <label><span class="form-label">Ingredients</span>
         <div id="updateIngredients">
           {{#each ingredients}}
             <li>
@@ -31,7 +31,7 @@
       </label>
     </div>
 
-    <div class="col">
+    <div class="col text-center">
       <label class="form-label">Method
         <textarea
           type="text"
@@ -44,7 +44,7 @@
       </label>
     </div>
 
-    <div class="col">
+    <div class="col text-center">
       <label class="form-label">Difficulty
       <select name="difficulty" class="form-select" aria-label="difficulty">
         <option selected>{{difficulty}}</option>
@@ -57,7 +57,7 @@
       </label>
     </div>
 
-    <div class="col">
+    <div class="col text-center">
       <label class="form-label">Side Effects
       <textarea
         type="text"
@@ -68,6 +68,7 @@
       >{{sideEffects}}
       </textarea>
       </label>
+      <button type="submit" class="btn btn-success"> Fix your mistakes </button>
     </div>
 
 
@@ -75,7 +76,7 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
 
-    <button type="submit" class="btn btn-light"> Fix your mistakes </button>
+    
   </form>
-
+</div>
 </body>

@@ -405,7 +405,7 @@ text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgree
 .btn-success {
   position: relative;
   background-color: yellowgreen;
-  width: 268px;
+  width: 243px;
   height:44px;
   font-size: 20px;
   margin-top:20px;
@@ -424,6 +424,65 @@ input.btn {
   background-color: yellowgreen;
   color: white;
   border: none;
+}
+
+#potionEditForm label.form-label {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 6vh;
+  color: greenyellow;
+  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+}
+
+#potionEditForm label span.form-label {
+  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
+  font-size: 6vh;
+  color: greenyellow;
+  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+}
+
+
+#potionEditForm input {
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+#potionEditForm select {
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+#potionEditForm textarea {
+  font-family:'Times New Roman', Times, serif;
+  font-size:20px;
+  color: black;
+}
+
+#potionEditForm .form-control {
+  margin-top:24px;
+}
+#potionEditForm .form-select {
+  margin-top:24px;
+}
+
+.createPotionButton {
+  text-decoration: none;
+  padding: 1px 30px;
+  border-radius:0.375rem;
+  background-color: green;
+  color: yellowgreen;
+  font-family: "Parseltongue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size:40px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 0.2vw;
+  border: solid yellowgreen 1px;
+  margin-left: 150px;
+}
+
+.createDiv {
+  margin-top:40px;
 }
 
 #intro {

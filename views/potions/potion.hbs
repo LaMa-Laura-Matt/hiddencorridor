@@ -29,9 +29,10 @@
     <p id="sideEffects">
         Possible side effects include: {{potionDetails.sideEffects}}
     </p>
+    
+    {{#if isOwner}}
     <div class="row potion-links">
         <div class="col">
-    {{#if isOwner}}
     <a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
     </div>
     <div class="col">
@@ -39,13 +40,22 @@
             <button id="deleteButton">Delete</button>
            </form>
             </div>
+            <div class="col">
+            <a href="/potions">Back</a>
+            </div>
+    </div>
      {{else}}
-            {{/if}}
+            
 
-
+<div class="row potion-links">
+        <div class="col"></div>
+        <div class="col"></div>
 <div class="col">
 <a href="/potions">Back</a>
 </div>
 </div>
+
+{{/if}}
+
 </section>
 </body>
