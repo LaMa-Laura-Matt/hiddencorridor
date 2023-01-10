@@ -6,8 +6,8 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const isPotionOwner = require("../middleware/isOwner");
 
 
-// Hidden Corridor
-router.get("/hidden-corridor", isLoggedIn,(req, res, next) => {
+// PotionsRoom
+router.get("/potions", isLoggedIn,(req, res, next) => {
   //here we will list the potions so will need to do a .find())
   
   Potion.find()
@@ -44,7 +44,7 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
 
   Potion.create(newPotion)
     .then(() => {
-      res.redirect("/hidden-corridor");
+      res.redirect("/potions");
     })
     .catch((err) => {
       console.log("error creating the potion", err);
@@ -55,7 +55,7 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
 
 
 //READ: Potion details
-router.get("/hidden-corridor/:potionid", isLoggedIn,(req, res, next) => {
+router.get("/potions/:potionid", isLoggedIn,(req, res, next) => {
   const id = req.params.potionid;
   let isOwner = false
 
@@ -81,7 +81,7 @@ router.get("/hidden-corridor/:potionid", isLoggedIn,(req, res, next) => {
 
 
 //display the update potion form
-router.get("/hidden-corridor/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
+router.get("/potions/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
 
   const id = req.params.potionId;
 
@@ -100,7 +100,7 @@ router.get("/hidden-corridor/:potionId/edit", isLoggedIn, isPotionOwner, (req, r
 module.exports = router;
 
 //UPDATE: process form
-router.post("/hidden-corridor/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
+router.post("/potions/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
   const potionId = req.params.potionId;
 
   const newDetails = {
@@ -114,8 +114,8 @@ router.post("/hidden-corridor/:potionId/edit", isLoggedIn, isPotionOwner, (req, 
 
   Potion.findByIdAndUpdate(potionId, newDetails)
       .then(() => {
-          res.redirect('/hidden-corridor/' + potionId);
-          // This didnt work !! (`hidden-corridor/${potionId}`);
+          res.redirect('/potions/' + potionId);
+          // This didnt work !! (`potions/${potionId}`);
       })
       .catch(err => {
           console.log("Error updating potion...", err);
@@ -124,10 +124,10 @@ router.post("/hidden-corridor/:potionId/edit", isLoggedIn, isPotionOwner, (req, 
 });
 
 //DELETE
-router.post("/hidden-corridor/:potionId/delete", isLoggedIn, isPotionOwner, (req, res, next) => {
+router.post("/potions/:potionId/delete", isLoggedIn, isPotionOwner, (req, res, next) => {
   Potion.findByIdAndDelete(req.params.potionId)
       .then(() => {
-          res.redirect("/hidden-corridor");
+          res.redirect("/potions");
       })
       .catch(err => {
           console.log("Error deleting potion...", err);

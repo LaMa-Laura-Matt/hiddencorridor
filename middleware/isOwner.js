@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
     .populate("wizard")
     .then((potion) => {
       if (req.session.currentWizard.Wizardname !== potion.wizard.Wizardname) {
-        return res.redirect("/hidden-corridor");
+        return res.redirect("/potions");
       }
       next();
     })

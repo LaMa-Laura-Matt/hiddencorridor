@@ -11,4 +11,15 @@ router.get("/fifth-floor", isLoggedIn, (req, res, next) => {
   res.render("corridor/fifth-floor");
 });
 
+// Hidden Corridor
+router.get("/hidden-corridor", isLoggedIn,(req, res, next) => {
+   res.render("corridor/hidden-corridor");
+    });
+
+//Trophy Room
+router.get("/trophy-room", isLoggedIn,(req, res, next) => {
+  res.render("corridor/trophy-room");
+   })
+    
+
 module.exports = router;

@@ -1,4 +1,4 @@
-<body id="potionsBody">
+<body id="hiddenCorridorBody">
 
 <section class="potion-details">
     <h1>{{potionDetails.potionName}}</h1>
@@ -20,9 +20,9 @@
     </p>
     
     {{#if isOwner}}
-<a href="/hidden-corridor/{{potionDetails._id}}/edit">Edit details</a>
+<a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
     <p>
-        <form action="/hidden-corridor/{{potionDetails._id}}/delete" method="POST">
+        <form action="/potions/{{potionDetails._id}}/delete" method="POST">
             <button>Delete</button>
            
         </form>
@@ -32,6 +32,6 @@
 
 </section>
 
-<a href="/hidden-corridor">Back</a>
+<a href="/potions">Back</a>
 
 </body>
