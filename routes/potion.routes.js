@@ -5,13 +5,12 @@ const Wizard = require("../models/Wizard.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isPotionOwner = require("../middleware/isOwner");
 
-
 // PotionsRoom
-router.get("/potions", isLoggedIn,(req, res, next) => {
+router.get("/potions", isLoggedIn, (req, res, next) => {
   //here we will list the potions so will need to do a .find())
-  
+
   Potion.find()
-  .populate("wizard")
+    .populate("wizard")
     .then((potionsFromDB) => {
       console.log("welcome to the HC");
       res.render("potions/potion-list", { potions: potionsFromDB });
@@ -39,12 +38,14 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
     potionTime: req.body.potionTime,
     difficulty: req.body.difficulty,
     sideEffects: req.body.sideEffects,
-    wizard:req.session.currentWizard,
-    numberOfLikes: 0
+    wizard: req.session.currentWizard,
+    numberOfLikes: req.session.currentWizard,
   };
+  console.log(newPotion);
 
   Potion.create(newPotion)
     .then(() => {
+      console.log(newPotion);
       res.redirect("/potions");
     })
     .catch((err) => {
@@ -53,85 +54,146 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
     });
 });
 
-
-
 //READ: Potion details
-router.get("/potions/:potionid", isLoggedIn,(req, res, next) => {
+router.get("/potions/:potionid", isLoggedIn, (req, res, next) => {
   const id = req.params.potionid;
-  let isOwner = false
-
-
+  let isOwner = false;
 
   Potion.findById(id)
-      .populate("wizard")
-      .then(potionDetails => {
-      
+    .populate("wizard")
+    .then((potionDetails) => {
+      if (
+        req.session.currentWizard.Wizardname === potionDetails.wizard.Wizardname
+      ) {
+        isOwner = true;
+      }
 
-          if (req.session.currentWizard.Wizardname === potionDetails.wizard.Wizardname) {
-           isOwner = true
-          }
-
-
-          res.render("potions/potion", {potionDetails: potionDetails, isOwner:isOwner} );
-      })
-      .catch(err => {
-          console.log("error getting potion details from DB", err);
-          next();
-      })
+      res.render("potions/potion", {
+        potionDetails: potionDetails,
+        isOwner: isOwner,
+      });
+    })
+    .catch((err) => {
+      console.log("error getting potion details from DB", err);
+      next();
+    });
 });
-
 
 //display the update potion form
-router.get("/potions/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
+router.get(
+  "/potions/:potionId/edit",
+  isLoggedIn,
+  isPotionOwner,
+  (req, res, next) => {
+    const id = req.params.potionId;
 
-  const id = req.params.potionId;
+    Potion.findById(id)
 
-  Potion.findById(id)
- 
       .then((potionDetails) => {
-          console.log(potionDetails);
+        console.log(potionDetails);
 
-          res.render("potions/potion-edit", potionDetails);
+        res.render("potions/potion-edit", potionDetails);
       })
-      .catch(err => {
-          console.log("Error getting potion details from DB...", err);
-          next();
+      .catch((err) => {
+        console.log("Error getting potion details from DB...", err);
+        next();
       });
-});
+  }
+);
 module.exports = router;
 
 //UPDATE: process form
-router.post("/potions/:potionId/edit", isLoggedIn, isPotionOwner, (req, res, next) => {
-  const potionId = req.params.potionId;
+router.post(
+  "/potions/:potionId/edit",
+  isLoggedIn,
+  isPotionOwner,
+  (req, res, next) => {
+    const potionId = req.params.potionId;
 
-  const newDetails = {
+    const newDetails = {
       potionName: req.body.potionName,
       ingredients: req.body.ingredients,
       method: req.body.method,
       potionTime: req.body.potionTime,
       difficulty: req.body.difficulty,
-      sideEffects: req.body.sideEffects
-  }
+      sideEffects: req.body.sideEffects,
+    };
 
-  Potion.findByIdAndUpdate(potionId, newDetails)
+    Potion.findByIdAndUpdate(potionId, newDetails)
       .then(() => {
-          res.redirect('/potions/' + potionId);
-          // This didnt work !! (`potions/${potionId}`);
+        res.redirect("/potions/" + potionId);
+        // This didnt work !! (`potions/${potionId}`);
       })
-      .catch(err => {
-          console.log("Error updating potion...", err);
-          next();
+      .catch((err) => {
+        console.log("Error updating potion...", err);
+        next();
       });
-});
+  }
+);
 
 //DELETE
-router.post("/potions/:potionId/delete", isLoggedIn, isPotionOwner, (req, res, next) => {
-  Potion.findByIdAndDelete(req.params.potionId)
+router.post(
+  "/potions/:potionId/delete",
+  isLoggedIn,
+  isPotionOwner,
+  (req, res, next) => {
+    Potion.findByIdAndDelete(req.params.potionId)
       .then(() => {
-          res.redirect("/potions");
+        res.redirect("/potions");
       })
-      .catch(err => {
-          console.log("Error deleting potion...", err);
-          next();
+      .catch((err) => {
+        console.log("Error deleting potion...", err);
+        next();
       });
+  }
+);
+
+//POST
+router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
+  const potionId = req.params.potionId;
+let newWizard = req.session.currentWizard;  
+let newLikeArr = [];
+
+  Potion.findById(potionId)
+    .populate("wizard")
+    .then((potionDetails) => {
+      console.log(potionDetails);
+      
+      potionDetails.numberOfLikes.forEach((wizardId) => {
+        console.log(wizardId);
+
+        if (wizardId._id !== req.session.currentWizard._id) {
+          console.log(potionDetails.numberOfLikes);
+          newLikeArr = potionDetails.numberOfLikes.push(req.session.currentWizard);
+          console.log("This is the new Array" + newLikeArr);
+        } else {
+          let index = potionDetails.numberOfLikes.indexOf(wizardId);
+          if (index > -1) {
+            let newLikeArr = potionDetails.numberOfLikes.splice(index, 1);
+          }
+        }
+      });
+      res.redirect("/potions/");
+        // This didnt work AGAIN!! (`potions/${potionId}`);
+    })
+    .catch((err) => {
+      console.log("Error liking potion...", err);
+      next();
+    });
+
+    const newDetails = {
+      numberOfLikes: newLikeArr,
+    }
+    console.log(newDetails);
+
+    Potion.findByIdAndUpdate(potionId, newDetails)
+    .then(() => {
+      res.redirect("/potions/");
+      // This didnt work !! (`potions/${potionId}`);
+    })
+    .catch((err) => {
+      console.log("Error updating potion...", err);
+      next();
+    });
+
 });

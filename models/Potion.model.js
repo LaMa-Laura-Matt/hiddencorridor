@@ -34,10 +34,11 @@ const PotionSchema = new Schema(
       type: String,
       required: false,
     },
-    numberOfLikes: {
-      type: Number,
+    numberOfLikes: [{
+      type: Schema.Types.ObjectId,
+      ref: "Wizard",
       required: false,
-    },
+    }],
   },
 
   {

@@ -18,12 +18,21 @@
               class="card-subtitle1 mb-2 text-muted"
             >{{this.wizard.Wizardname}}</h6>
             <div class="card-footer">
-              <a href="#" class="card-link1"><img src="../../images/Hogwarts/icon-blue-wand.png" alt="wand icon"></a>
-              <p>
-                {{this.numberOfLikes}}
-                <a href="#" id="emptyPotion"><img src="../../images/Hogwarts/icon-empty-potion.png" alt="potion icon"></a>
-                <a href="#" id="emptyPotion"><img src="../../images/Hogwarts/icon-empty-potion.png" alt="potion icon"></a>
-              </p>
+              <form method="post" action="/potions/{{_id}}/like" class="inline">
+                <input
+                  type="hidden"
+                  name="extra_submit_param"
+                  value="extra_submit_value"
+                />
+                <button
+                  type="submit"
+                  name="submit_param"
+                  value="submit_value"
+                  class="link-button"
+                >
+                <img src="../../images/Hogwarts/icon-blue-wand.png">
+                </button>
+              </form>
               <a href="/potions/{{_id}}" class="card-link1">More Details</a>
             </div>
           </div>
@@ -32,3 +41,6 @@
     {{/each}}
   </div>
 </body>
+
+
+
