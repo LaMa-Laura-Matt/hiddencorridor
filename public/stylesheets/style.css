@@ -429,3 +429,14 @@ left:15vw;
   top:42vh;
   right:20vw;
 }
+
+.fifthFloorLink {
+  font-family: "Wizard", Arial, Helvetica, sans-serif;
+  font-size: 6vh;
+  color: purple;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-decoration:none;
+  position: fixed;
+  bottom:1vh;
+  left:12vw;
+}
