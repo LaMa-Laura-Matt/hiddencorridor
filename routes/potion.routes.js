@@ -13,11 +13,23 @@ router.get("/potions", isLoggedIn,(req, res, next) => {
   Potion.find()
   .populate("wizard")
     .then((potionsFromDB) => {
-      console.log("welcome to the HC");
-      res.render("potions/potion-list", { potions: potionsFromDB });
+      let gryffindor = false;
+      let hufflepuff = false;
+      let ravenclaw = false;
+      let slytherin = false;
+
+      if (req.session.currentWizard.house === "gryffindor") {
+        gryffindor = true;
+      } else if (req.session.currentWizard.house === "hufflepuff") {
+        hufflepuff = true;
+      } else if (req.session.currentWizard.house === "ravenclaw") {
+        ravenclaw = true;
+      } else if (req.session.currentWizard.house === "slytherin") {
+        slytherin = true;
+      }
+      res.render("potions/potion-list", { potions: potionsFromDB, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin });
     })
     .catch((err) => {
-      console.log("error getting potions from DB", err);
       next(err);
     });
 });
