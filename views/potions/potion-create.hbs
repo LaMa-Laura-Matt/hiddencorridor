@@ -49,6 +49,7 @@
         </label>
         <input type="button" class="btn btn-light" value="+" onClick="addInput();" />
       </div>
+      </div>
 
       
       <div class="row">
@@ -65,13 +66,25 @@
             />
           </label>
         </div>
-        <div class="col"><button type="submit" class="btn btn-success fixed-bottom"> Create your poison </button></div>
+        <div class="col text-center">
+        <label class="form-label">Brewing Time
+          <input
+            type="number"
+            class="form-control"
+            name="potionTime"
+            value="60"
+            aria-label="potionTime"
+          />
+        </label>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><button type="submit" class="btn btn-success"> Create your poison </button></div>
+      <div class="col"></div>
       </div>
       
-      </div>
-
-
-    </div>
+      
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
