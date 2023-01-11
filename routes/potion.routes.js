@@ -26,6 +26,7 @@ router.get("/potions", isLoggedIn, (req, res, next) => {
       } else if (req.session.currentWizard.house === "slytherin") {
         slytherin = true;
       }
+
       res.render("potions/potion-list", { potions: potionsFromDB, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin });
     })
     .catch((err) => {
