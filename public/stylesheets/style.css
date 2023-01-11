@@ -9,11 +9,6 @@
 }
 
 @font-face {
-  font-family: Lumos;
-  src: url("../fonts/LUMOS.TTF");
-}
-
-@font-face {
   font-family: Wizard;
   src: url("../fonts/WizardWorldSimplified-Kxr7.ttf");
 }
@@ -23,7 +18,20 @@
   src: url("../fonts/Tomatoes-O8L8.ttf");
 }
 
+@font-face {
+  font-family: Augusta;
+  src: url("../fonts/Augusta.ttf");
+}
 
+@font-face {
+  font-family: BlackCastle;
+  src: url("../fonts/BlackCastleMF.ttf");
+}
+
+@font-face {
+  font-family: Bottom Rock;
+  src: url("../fonts/Bottom\ Rock.ttf");
+}
 
 #mainNav {
   font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
@@ -665,7 +673,16 @@ a.fifthFloorLink {
   color: purple;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-decoration:none;
+}
 
 #fifthFloorLink {
   margin-top: 6vh;
+}
+
+#potionimg {
+  height:33vh;
+}
+
+#trophyimg {
+  height:33vh;
 }
