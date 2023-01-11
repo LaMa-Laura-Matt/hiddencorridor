@@ -310,21 +310,22 @@ div.row.card-footer {
   text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow, 0 -1px greenyellow;
   margin-top:2.5vh;
   margin-bottom: 2vh;
-  margin-left:10vw;
+  
 }
 
 #individualPotionAuthor {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: plum;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
+  font-size: 7vh;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
   margin-top:65px;
-  margin-left: 10vw;;
+  
 }
 
 .ingredientList {
   margin-top:20px;
   margin-left:11vw;
+  margin-bottom:3vh;
 }
 
 #brewTime {
@@ -332,22 +333,21 @@ div.row.card-footer {
 }
 
 #difficulty {
-  font-family: "Wizard", Arial, Helvetica, sans-serif;
-  font-size:50px;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
   margin-left: 13.5vw;
-  color: darkgreen;
-  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow, 0 -1px greenyellow;
+  margin-top:5vh
 }
 
 #difficultyResult {
-  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
-  font-size:40px;
   margin-left: 2vw
 }
 
 #sideEffects {
   margin-left:13.5vw;
-  margin-top: 5vh;
+  margin-top: 3vh;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
 }
 
 .potion-links {
@@ -379,7 +379,9 @@ div.row.card-footer {
 
 .potion-details {
   font-family: "Bottomrock", Arial, Helvetica, sans-serif;
-  color: antiquewhite
+  color: antiquewhite;
+  font-size:3vh;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #createPotionForm label{
@@ -685,3 +687,8 @@ a.fifthFloorLink {
 #hiddenCorridorImg {
   height:33vh;
 }
+
+#wandIcon {
+  background: none;
+}
+
