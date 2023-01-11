@@ -18,8 +18,28 @@
     <p>
         Possible Side Effects {{potionDetails.sideEffects}}
     </p>
+    <form method="post" action="/potions/{{potionDetails._id}}/like" class="inline">
+                <input
+                  type="hidden"
+                  name="extra_submit_param"
+                  value="extra_submit_value"
+                />
+                <button
+                  type="submit"
+                  name="submit_param"
+                  value="submit_value"
+                  class="link-button"
+                >
+                <img src="../../images/Hogwarts/icon-blue-wand.png">
+                </button>
+              </form>
     <p>
-        Likes: {{potionDetails.numberOfLikes}}
+        Likes: {{potionDetails.numberOfLikes.length}}
+        {{#if wizardHasNotLiked}} 
+              <img src="../../images/Hogwarts/icon-empty-potion.png">
+              {{else}}
+              <img src="../../images/Hogwarts/icon-full-potion.png">
+        {{/if}}
     </p>
     
     {{#if isOwner}}

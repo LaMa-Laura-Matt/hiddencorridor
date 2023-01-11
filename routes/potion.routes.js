@@ -4,7 +4,6 @@ const Potion = require("../models/Potion.model");
 const Wizard = require("../models/Wizard.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isPotionOwner = require("../middleware/isOwner");
-const { $where } = require("../models/Potion.model");
 
 // PotionsRoom
 router.get("/potions", isLoggedIn, (req, res, next) => {
@@ -13,7 +12,6 @@ router.get("/potions", isLoggedIn, (req, res, next) => {
   Potion.find()
     .populate("wizard")
     .then((potionsFromDB) => {
-      console.log("welcome to the HC");
       res.render("potions/potion-list", { potions: potionsFromDB });
     })
     .catch((err) => {
@@ -21,6 +19,19 @@ router.get("/potions", isLoggedIn, (req, res, next) => {
       next(err);
     });
 });
+/*
+if (req.session.currentWizard.house === "gryffindor") {
+        gryffindor = true;
+      } else if (req.session.currentWizard.house === "hufflepuff") {
+        hufflepuff = true;
+      } else if (req.session.currentWizard.house === "ravenclaw") {
+        ravenclaw = true;
+      } else if (req.session.currentWizard.house === "slytherin") {
+        slytherin = true;
+      }
+      res.render("auth/profile", { wizard: wizardDetails, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin,});
+    })
+*/
 
 // Create a Potion Form
 router.get("/create-potion", isLoggedIn, (req, res, next) => {
@@ -152,7 +163,8 @@ router.post(
 // Like functionality
 router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
   const potionId = req.params.potionId;
-let newWizard = req.session.currentWizard._id;  
+let newWizard = req.session.currentWizard._id;
+let wizardHasNotLiked = false;
 
 Potion.findById(potionId)
 //.populate('numberOfLikes').select('-password')
@@ -162,7 +174,7 @@ Potion.findById(potionId)
     console.log("has not like this yet");
     Potion.findByIdAndUpdate(potionId, { $push: { numberOfLikes: newWizard }}, { new: true } )
     .then((newPotionDetails) => {
-      res.redirect("/potions");
+      res.render("potions/potion", { potionDetails: newPotionDetails, wizardHasLiked: wizardHasLiked});
     })
     .catch((err) => {
       console.log("Error removing potion...", err);
@@ -172,7 +184,8 @@ Potion.findById(potionId)
     console.log("has liked this already!!");
     Potion.findByIdAndUpdate(potionId, { $pull: { numberOfLikes: newWizard }}, { new: true } )
     .then((newPotionDetails) => {
-      res.redirect("/potions");
+      wizardHasNotLiked = true;
+      res.render("potions/potion", { potionDetails: newPotionDetails, wizardHasNotLiked: wizardHasNotLiked});
         // This didnt work AGAIN!! (`potions/${potionId}`);
     })
     .catch((err) => {
