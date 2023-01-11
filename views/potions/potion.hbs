@@ -1,84 +1,103 @@
 <body id="potionDetailsBody">
 
-<section class="potion-details">
-    <div class="row">
-        <div class="col"><h1>{{potionDetails.potionName}}</h1></div>
-        <div class="col"><h5 id="individualPotionAuthor">Brewed by: {{potionDetails.wizard.Wizardname}}</h5></div>
+  <section class="potion-details">
+    <div class="row titleRow">
+
+        <div class="col-1 text-center">
+      {{potionDetails.numberOfLikes.length}}
+      {{#if wizardHasNotLiked}}
+        <img src="../../images/Hogwarts/icon-empty-potion.png" />
+      {{else}}
+        <img src="../../images/Hogwarts/icon-full-potion.png" />
+      {{/if}}
+   
+      <form
+        method="post"
+        action="/potions/{{potionDetails._id}}/like"
+        id="wandIcon"
+      >
+        <input
+          type="hidden"
+          name="extra_submit_param"
+          value="extra_submit_value"
+          id="wandIcon"
+          border="none"
+        />
+        <button
+          type="submit"
+          name="submit_param"
+          value="submit_value"
+          class="link-button"
+          id="wandIcon"
+          border="none"
+        >
+          <img src="../../images/Hogwarts/icon-blue-wand.png" />
+        </button>
+      </form>
+    </div>
+
+      <div class="col-6 text-center"><h1>{{potionDetails.potionName}}</h1></div>
+      <div class="col-5"><h5 id="individualPotionAuthor">Brewed by:
+          {{potionDetails.wizard.Wizardname}}</h5></div>
     </div>
     
-    <div class="row">
-    <div class="col"><ul class="ingredientList">
-        <h3>Ingredients</h3>{{#each potionDetails.ingredients}} <br />
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    </div>
-    <div class="col">
-    <p>
-        <h3>Method</h3> <br>{{potionDetails.method}} 
-    </p>
-    <p>
-        <h3 id="brewTime">Time to Brew</h3> {{potionDetails.potionTime}}
-    </p>
-    </div>
-    </div>
-   
 
-    <p><span id="difficulty">Difficulty:</span> <span id="difficultyResult">{{potionDetails.difficulty}} </span>
+    
+    
+
+    <div class="row">
+      <div class="col"><ul class="ingredientList">
+          <h3><u>Ingredients</u></h3>{{#each potionDetails.ingredients}}
+            <br />
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col">
+        <p>
+          <h3><u>Method</u></h3>
+          <br />{{potionDetails.method}}
+        </p>
+        <p>
+          <h3 id="brewTime">Time to Brew:</h3>
+          {{potionDetails.potionTime}}
+        </p>
+      </div>
+    </div>
+
+    <p><span id="difficulty">Difficulty:</span>
+      <span id="difficultyResult">{{potionDetails.difficulty}} </span>
     </p>
     <p id="sideEffects">
-        Possible side effects include: {{potionDetails.sideEffects}}
+      Possible side effects include:
+      {{potionDetails.sideEffects}}
     </p>
-    <form method="post" action="/potions/{{potionDetails._id}}/like" class="inline">
-                <input
-                  type="hidden"
-                  name="extra_submit_param"
-                  value="extra_submit_value"
-                />
-                <button
-                  type="submit"
-                  name="submit_param"
-                  value="submit_value"
-                  class="link-button"
-                >
-                <img src="../../images/Hogwarts/icon-blue-wand.png">
-                </button>
-              </form>
-    <p>
-        Likes: {{potionDetails.numberOfLikes.length}}
-        {{#if wizardHasNotLiked}} 
-              <img src="../../images/Hogwarts/icon-empty-potion.png">
-              {{else}}
-              <img src="../../images/Hogwarts/icon-full-potion.png">
-        {{/if}}
-    </p>
-    
+
     {{#if isOwner}}
-    <div class="row potion-links">
+      <div class="row potion-links">
         <div class="col">
-    <a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
-    </div>
-    <div class="col">
-        <form action="/potions/{{potionDetails._id}}/delete" method="POST">
+          <a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
+        </div>
+        <div class="col">
+          <form action="/potions/{{potionDetails._id}}/delete" method="POST">
             <button id="deleteButton">Delete</button>
-           </form>
-            </div>
-            <div class="col">
-            <a href="/potions">Back</a>
-            </div>
-    </div>
-     {{else}}
-            
+          </form>
+        </div>
+        <div class="col">
+          <a href="/potions">Back</a>
+        </div>
+      </div>
+    {{else}}
 
-<div class="row potion-links">
+      <div class="row potion-links">
         <div class="col"></div>
         <div class="col"></div>
-<div class="col">
-<a href="/potions">Back</a>
-</div>
-</div>
+        <div class="col">
+          <a href="/potions">Back</a>
+        </div>
+      </div>
 
-{{/if}}
+    {{/if}}
 
-</section>
+  </section>
 </body>

@@ -33,19 +33,7 @@ router.get("/potions", isLoggedIn, (req, res, next) => {
       next(err);
     });
 });
-/*
-if (req.session.currentWizard.house === "gryffindor") {
-        gryffindor = true;
-      } else if (req.session.currentWizard.house === "hufflepuff") {
-        hufflepuff = true;
-      } else if (req.session.currentWizard.house === "ravenclaw") {
-        ravenclaw = true;
-      } else if (req.session.currentWizard.house === "slytherin") {
-        slytherin = true;
-      }
-      res.render("auth/profile", { wizard: wizardDetails, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin,});
-    })
-*/
+
 
 // Create a Potion Form
 router.get("/create-potion", isLoggedIn, (req, res, next) => {
