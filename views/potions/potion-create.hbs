@@ -10,7 +10,7 @@
             type="text"
             class="form-control"
             name="potionName"
-            placeholder="Polyjuice"
+            placeholder="Potion Name"
             aria-label="potionName"
           />
         </label>
@@ -23,7 +23,7 @@
               class="form-select"
               aria-label="difficulty"
             >
-              <option selected>Choose difficulty</option>
+              <option selected>Difficulty</option>
               <option value="squib">Squib</option>
               <option value="firstYear">First Year</option>
               <option value="owlLevel">OWL Level</option>
@@ -37,14 +37,7 @@
     <div class="row">
       <div class="col text-center">
         <label class="form-label">Method
-          <textarea
-            type="text"
-            class="form-control"
-            name="method"
-            aria-label="method"
-            rows="5"
-          >
-          </textarea>
+          <textarea placeholder="1. Step one, 2. Step two, etc" type="text" class="form-control" name="method" rows="4"></textarea>
         </label>
       </div>
       
@@ -55,6 +48,7 @@
           
         </label>
         <input type="button" class="btn btn-light" value="+" onClick="addInput();" />
+      </div>
       </div>
 
       
@@ -67,18 +61,30 @@
               type="text"
               class="form-control"
               name="sideEffects"
-              placeholder="what happens after you drink this!?!?!?"
+              placeholder="List Side Effects Here"
               aria-label="sideEffects"
             />
           </label>
         </div>
-        <div class="col"><button type="submit" class="btn btn-success fixed-bottom"> Create your poison </button></div>
+        <div class="col text-center">
+        <label class="form-label">Brewing Time
+          <input
+            type="number"
+            class="form-control"
+            name="potionTime"
+            value="60"
+            aria-label="potionTime"
+          />
+        </label>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"><button type="submit" class="btn btn-success"> Create your poison </button></div>
+      <div class="col"></div>
       </div>
       
-      </div>
-
-
-    </div>
+      
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}

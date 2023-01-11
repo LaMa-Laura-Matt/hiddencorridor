@@ -1,36 +1,45 @@
-
-
 {{#if gryffindor}}
 <body id="gryffindorCommomRoom">
-    <h2>Welcome to the Gryffindor Commonroom</h2>
-    <img class="crest" src="../../images/Hogwarts/gryffindorlogo.png" alt="Gryffindor Crest">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Gryffindor Commonroom</h2></div></div>
 
 {{else if hufflepuff}}
 <body id="hufflepuffCommomRoom">
-       <h2>Welcome to the Hufflepuff Commonroom</h2>
-    <img class="crest" src="../../images/Hogwarts/hufflepufflogo.png" alt="Hufflepuff Crest">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Hufflepuff Commonroom</h2></div></div>
 
 {{else if ravenclaw}}
 <body id="ravenclawCommomRoom">
-    <h2>Welcome to the Ravenclaw Commonroom</h2>
-    <img class="crest" src="../../images/Hogwarts/ravenclawlogo.png" alt="Ravenclaw Crest">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Ravenclaw Commonroom</h2></div></div>
 
 {{else }}
 <body id="slytherinCommomRoom">
-    <h2>Welcome to the Slytherin Commonroom</h2>
-    <img class="crest" src="../../images/Hogwarts/slytherinlogo.png" alt="Slytherin Crest">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Slytherin Commonroom</h2></div></div>
 {{/if}}
 
-
+<div class="row"><div class="col">
 <section>
     <h3>Profile</h3>
-    <h5>Name : <i>{{wizard.name}}</i></h5>
-    <h5>First year attending Hogwarts was : <i>{{wizard.firstYearOfHogwarts}}</i></h5>
-    <h5>Alias : <i>{{wizard.Wizardname}}</i></h5>
+    <h5><span class="profileCategories">Name:</span><span class="profileAnswersName"><i>{{wizard.name}}</i></span></h5>
+    <h5><span class="profileCategories">First year:</span><span class="profileAnswersYear"><i>{{wizard.firstYearOfHogwarts}}</i></span></h5>
+    <h5><span class="profileCategories">Alias:</span><span class="profileAnswersAlias"><i>{{wizard.Wizardname}}</i></span></h5>
 </section>
+</div>
 
- <a class="fifthFloorLink" href="/fifth-floor">Lets go to the 5th Floor to find the Hidden Corridor</a>
+<div class="col text-center">
+{{#if gryffindor}}
+    <img class="crest" src="../../images/Hogwarts/gryffindorlogo.png" alt="Gryffindor Crest">
 
+{{else if hufflepuff}}
+    <img class="crest" src="../../images/Hogwarts/hufflepufflogo.png" alt="Hufflepuff Crest">
+
+{{else if ravenclaw}}
+    <img class="crest" src="../../images/Hogwarts/ravenclawlogo.png" alt="Ravenclaw Crest">
+
+{{else }}
+    <img class="crest" src="../../images/Hogwarts/slytherinlogo.png" alt="Slytherin Crest">
+{{/if}}
+</div>
+<div class="row"><div class="col text-center" id="fifthFloorLink"><a class="fifthFloorLink" href="/fifth-floor">Lets go to the 5th Floor to find the Hidden Corridor</a>
+</div></div>
 
 
 </body>

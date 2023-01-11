@@ -1,6 +1,13 @@
 <body id="hiddenCorridorBody">
 
+  <div class="row"><div class="col text-center" style="width:45vw">
   <h1>Illicit Potions</h1>
+  </div>
+  <div class="col createDiv" style="width:45vw">
+  <a class="createPotionButton" href="/create-potion">Create @ Potion</a>
+  </div>
+  </div>
+  
   <!-- <div class="container"> </div>-->
   <div class="row">
     {{#each potions}}
@@ -8,15 +15,26 @@
         <div class="card" style="width: 300px">
           <div class="card-body">
             <h5 class="card-title1">{{this.potionName}}</h5>
+
+            {{#if gryffindor}}
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="gryffindorAuthor">{{this.wizard.Wizardname}}</span></h6>
+            {{else if ravenclaw}}
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="ravenclawAuthor">{{this.wizard.Wizardname}}</span></h6>
+            {{else if hufflepuff}}
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="hufflepuffAuthor">{{this.wizard.Wizardname}}</span></h6>
+            {{else if slytherin}}
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="slytherinAuthor">{{this.wizard.Wizardname}}</span></h6>
+            {{else}}
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="author">{{this.wizard.Wizardname}}</span></h6>
+            {{/if}}
+
             <!-- listing each of the ingredients here -->
             <ul class="list-elements">
               {{#each this.ingredients}}
                 <li>{{this}}</li>
               {{/each}}
             </ul>
-            <h6
-              class="card-subtitle1 mb-2 text-muted"
-            >{{this.wizard.Wizardname}}</h6>
+            
             <div class="card-footer">
               <form method="post" action="/potions/{{_id}}/like" class="inline">
                 <input

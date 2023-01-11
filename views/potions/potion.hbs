@@ -1,22 +1,33 @@
-<body id="hiddenCorridorBody">
+<body id="potionDetailsBody">
 
 <section class="potion-details">
-    <h1>{{potionDetails.potionName}}</h1>
-    <h5>Brewed by: {{potionDetails.wizard.Wizardname}}</h5>
+    <div class="row">
+        <div class="col"><h1>{{potionDetails.potionName}}</h1></div>
+        <div class="col"><h5 id="individualPotionAuthor">Brewed by: {{potionDetails.wizard.Wizardname}}</h5></div>
+    </div>
+    
+    <div class="row">
+    <div class="col"><ul class="ingredientList">
+        <h3>Ingredients</h3>{{#each potionDetails.ingredients}} <br />
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    </div>
+    <div class="col">
     <p>
-        Ingredients {{potionDetails.ingredients}} <br />
+        <h3>Method</h3> <br>{{potionDetails.method}} 
     </p>
     <p>
-        How to brew it {{potionDetails.method}} <br />
+        <h3 id="brewTime">Time to Brew</h3> {{potionDetails.potionTime}}
     </p>
-    <p>
-        Time to brew {{potionDetails.potionTime}}
+    </div>
+    </div>
+   
+
+    <p><span id="difficulty">Difficulty:</span> <span id="difficultyResult">{{potionDetails.difficulty}} </span>
     </p>
-    <p>
-        Difficulty {{potionDetails.difficulty}} <br />
-    </p>
-    <p>
-        Possible Side Effects {{potionDetails.sideEffects}}
+    <p id="sideEffects">
+        Possible side effects include: {{potionDetails.sideEffects}}
     </p>
     <form method="post" action="/potions/{{potionDetails._id}}/like" class="inline">
                 <input
@@ -43,18 +54,31 @@
     </p>
     
     {{#if isOwner}}
-<a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
-    <p>
+    <div class="row potion-links">
+        <div class="col">
+    <a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
+    </div>
+    <div class="col">
         <form action="/potions/{{potionDetails._id}}/delete" method="POST">
-            <button>Delete</button>
-           
-        </form>
-    </p>
+            <button id="deleteButton">Delete</button>
+           </form>
+            </div>
+            <div class="col">
+            <a href="/potions">Back</a>
+            </div>
+    </div>
      {{else}}
-            {{/if}}
+            
+
+<div class="row potion-links">
+        <div class="col"></div>
+        <div class="col"></div>
+<div class="col">
+<a href="/potions">Back</a>
+</div>
+</div>
+
+{{/if}}
 
 </section>
-
-<a href="/potions">Back</a>
-
 </body>
