@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Potion = require("../models/Potion.model");
-const Wizard = require("../models/Wizard.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isPotionOwner = require("../middleware/isOwner");
 
@@ -188,7 +187,7 @@ Potion.findById(potionId)
     console.log("has not like this yet");
     Potion.findByIdAndUpdate(potionId, { $push: { numberOfLikes: newWizard }}, { new: true } )
     .then((newPotionDetails) => {
-      res.render("potions/potion", { potionDetails: newPotionDetails, wizardHasLiked: wizardHasLiked});
+      res.render("potions/potion", { potionDetails: newPotionDetails, wizardHasNotLiked: wizardHasNotLiked});
     })
     .catch((err) => {
       console.log("Error removing potion...", err);
