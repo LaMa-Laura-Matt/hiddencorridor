@@ -1,9 +1,9 @@
 <body id="hiddenCorridorBody">
 
-  <div class="row"><div class="col text-center" style="width:45vw">
+  <div class="row"><div class="col text-center" style="width:55vw">
   <h1>Illicit Potions</h1>
   </div>
-  <div class="col createDiv" style="width:45vw">
+  <div class="col createDiv" style="width:40vw">
   <a class="createPotionButton" href="/create-potion">Create @ Potion</a>
   </div>
   </div>
@@ -16,18 +16,8 @@
           <div class="card-body">
             <h5 class="card-title1">{{this.potionName}}</h5>
 
-            {{#if gryffindor}}
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="gryffindorAuthor">{{this.wizard.Wizardname}}</span></h6>
-            {{else if ravenclaw}}
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="ravenclawAuthor">{{this.wizard.Wizardname}}</span></h6>
-            {{else if hufflepuff}}
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="hufflepuffAuthor">{{this.wizard.Wizardname}}</span></h6>
-            {{else if slytherin}}
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="slytherinAuthor">{{this.wizard.Wizardname}}</span></h6>
-            {{else}}
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by: </span><span class="author">{{this.wizard.Wizardname}}</span></h6>
-            {{/if}}
-
+            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by:  </span><span class="author">{{this.wizard.Wizardname}}</span></h6>
+            
             <!-- listing each of the ingredients here -->
             <ul class="list-elements">
               {{#each this.ingredients}}
@@ -35,28 +25,17 @@
               {{/each}}
             </ul>
             
-            <div class="card-footer">
-              <form method="post" action="/potions/{{_id}}/like" class="inline">
-                <input
-                  type="hidden"
-                  name="extra_submit_param"
-                  value="extra_submit_value"
-                />
-                <button
-                  type="submit"
-                  name="submit_param"
-                  value="submit_value"
-                  class="link-button"
-                >
-                <img src="../../images/Hogwarts/icon-blue-wand.png">
-                </button>
-              </form>
-              <h5><span>{{this.numberOfLikes.length}}</span> Likes</h5>
-              <a href="/potions/{{_id}}" class="card-link1">More Details</a>
+            <div class="row card-footer">
+              <div class="col"><img src="../../images/Hogwarts/icon-full-potion.png">
+              </div>
+              <div class="col"><h5 id="likeNumber">{{this.numberOfLikes.length}}</h5></div>
+               <div class="col text-center">
+              <a href="/potions/{{_id}}" class="card-link1">Details</a></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      
     {{/each}}
   </div>
 </body>

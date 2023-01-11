@@ -29,7 +29,7 @@
 }
 
 @font-face {
-  font-family: Bottom Rock;
+  font-family: Bottomrock;
   src: url("../fonts/Bottom\ Rock.ttf");
 }
 
@@ -248,50 +248,49 @@ span#message {
 }
 
 .card-text1 {
-  font-family: "Tomatoes", Helvetica, Arial, sans-serif;
+  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
   font-size: 3vh;
   color: black;
+}
+div.card {
+  margin:15px;
+}
+
+div.row.card-footer {
+  padding:0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer a{
+  text-decoration: none;
+  color: antiquewhite;
+  font-family: "Magic School", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 6vh;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#likeNumber {
+  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  font-size: 6vh;
+  margin-top:10px;
 }
 
 .createdBy {
   font-family: "Wizard", Helvetica, Arial, sans-serif;
-  font-size: 3vh;
+  font-size: 2vh;
   color: black;
 }
 
-.gryffindorAuthor {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: red;
-  text-shadow: -1px 0 gold, 0 1px gold, 1px 0 gold, 0 -1px gold;
-}
-
-.ravenclawAuthor {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: blue;
-  text-shadow: -1px 0 #CD7F32, 0 1px #CD7F32, 1px 0 #CD7F32, 0 -1px #CD7F32;
-}
-
-.hufflepuffAuthor {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: yellow;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.slytherinAuthor {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: green;
-  text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
-}
-
 .author {
-  font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 4vh;
-  color: plum;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
+  font-size: 3.5vh;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  margin-left:15px;
 }
 
 #potionDetailsBody {
@@ -341,7 +340,7 @@ span#message {
 }
 
 #difficultyResult {
-  font-family: "Tomatoes", Arial, Helvetica, sans-serif;
+  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
   font-size:40px;
   margin-left: 2vw
 }
@@ -373,13 +372,13 @@ span#message {
 }
 
 .list-elements {
-  font-family: "Tomatoes", Helvetica, Arial, sans-serif;
+  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
   font-size: 3vh;
   color: black;
 }
 
 .potion-details {
-  font-family: "Tomatoes", Arial, Helvetica, sans-serif;
+  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
   color: antiquewhite
 }
 
@@ -679,10 +678,10 @@ a.fifthFloorLink {
   margin-top: 6vh;
 }
 
-#potionimg {
-  height:33vh;
+#hiddenCorridorRoomsImageLinks {
+  margin-top:10vh;
 }
 
-#trophyimg {
+#hiddenCorridorImg {
   height:33vh;
 }
