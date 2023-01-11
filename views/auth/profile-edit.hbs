@@ -1,0 +1,67 @@
+{{#if gryffindor}}
+<body id="gryffindorCommomRoom">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Gryffindor Commonroom</h2></div></div>
+
+{{else if hufflepuff}}
+<body id="hufflepuffCommomRoom">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Hufflepuff Commonroom</h2></div></div>
+
+{{else if ravenclaw}}
+<body id="ravenclawCommomRoom">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Ravenclaw Commonroom</h2></div></div>
+
+{{else }}
+<body id="slytherinCommomRoom">
+    <div class="row"><div class="col text-center"><h2>Welcome to the Slytherin Commonroom</h2></div></div>
+{{/if}}
+
+
+  <h1>Make changes to: {{Wizardname}}</h1>
+
+  <form id="profileEditForm" action="/auth/profile/{{_id}}/edit" method="POST">
+    <div class="row">
+    <div class="col text-center">
+      <label class="form-label">Your Name
+        <textarea
+          type="text"
+          class="form-control"
+          name="name"
+          aria-label="name"
+          rows="1"
+        >{{name}}
+        </textarea>
+      </label>
+    </div>
+
+    <div class="col">
+          <select name="house" class="form-select" aria-label="house">
+            <option selected>{{house}}</option>
+            <option value="gryffindor">Gryffindor</option>
+            <option value="hufflepuff">Hufflepuff</option>
+            <option value="ravenclaw">Ravenclaw</option>
+            <option value="slytherin">Slytherin</option>
+          </select>
+        </div>
+
+    <div class="col text-center">
+      <label class="form-label">First Year Of Hogwarts
+      <input
+            type="number"
+            class="form-control"
+            name="firstYearOfHogwarts"
+            value={{firstYearOfHogwarts}}
+            aria-label="firstYearOfHogwarts"
+          />
+      </label>
+      <button type="submit" class="btn btn-success"> Fix your mistakes </button>
+    </div>
+
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
+    
+  </form>
+</div>
+</body>

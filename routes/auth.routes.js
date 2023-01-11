@@ -98,8 +98,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         res.status(500).render("auth/signup", { errorMessage: error.message });
       } else if (error.code === 11000) {
         res.status(500).render("auth/signup", {
-          errorMessage:
-            "Wizardname is taken, please try again.",
+          errorMessage: "Wizardname is taken, please try again.",
         });
       } else {
         next(error);
@@ -202,7 +201,13 @@ router.get("/profile/:wizardId", isLoggedIn, (req, res, next) => {
       } else if (req.session.currentWizard.house === "slytherin") {
         slytherin = true;
       }
-      res.render("auth/profile", { wizard: wizardDetails, gryffindor: gryffindor,  hufflepuff: hufflepuff, ravenclaw: ravenclaw, slytherin: slytherin,});
+      res.render("auth/profile", {
+        wizard: wizardDetails,
+        gryffindor: gryffindor,
+        hufflepuff: hufflepuff,
+        ravenclaw: ravenclaw,
+        slytherin: slytherin,
+      });
     })
     .catch((err) => {
       console.log(
@@ -213,5 +218,62 @@ router.get("/profile/:wizardId", isLoggedIn, (req, res, next) => {
     });
 });
 
+//display the update user form
+router.get("/profile/:profileId/edit", isLoggedIn, (req, res, next) => {
+  const id = req.params.profileId;
+
+  Wizard.findById(id)
+    .then((userDetails) => {
+      console.log(userDetails);
+
+      res.render("auth/profile-edit", userDetails);
+    })
+    .catch((err) => {
+      console.log("Error getting user details from DB...", err);
+      next();
+    });
+});
+module.exports = router;
+
+//UPDATE: process form
+router.post("/profile/:profileId/edit", isLoggedIn, (req, res, next) => {
+  const profileId = req.params.profileId;
+
+  const newDetails = {
+    name: req.body.name,
+    firstYearOfHogwarts: req.body.firstYearOfHogwarts,
+    house: req.body.house,
+  };
+
+  Wizard.findByIdAndUpdate(profileId, newDetails, { new: true })
+    .then((updatedDetails) => {
+      let gryffindor = false;
+      let hufflepuff = false;
+      let ravenclaw = false;
+      let slytherin = false;
+
+      if (updatedDetails.house === "gryffindor") {
+        gryffindor = true;
+      } else if (updatedDetails.house === "hufflepuff") {
+        hufflepuff = true;
+      } else if (updatedDetails.house === "ravenclaw") {
+        ravenclaw = true;
+      } else if (updatedDetails.house === "slytherin") {
+        slytherin = true;
+      }
+      res.render("auth/profile", {
+        wizard: updatedDetails,
+        gryffindor: gryffindor,
+        hufflepuff: hufflepuff,
+        ravenclaw: ravenclaw,
+        slytherin: slytherin,
+      });
+      //res.redirect("/auth/profile/" + profileId);
+    })
+    .catch((err) => {
+      console.log("Error updating wizard...", err);
+      next();
+    });
+});
 
 module.exports = router;
