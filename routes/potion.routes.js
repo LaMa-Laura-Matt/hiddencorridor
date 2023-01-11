@@ -4,6 +4,7 @@ const Potion = require("../models/Potion.model");
 const Wizard = require("../models/Wizard.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isPotionOwner = require("../middleware/isOwner");
+const { $where } = require("../models/Potion.model");
 
 // PotionsRoom
 router.get("/potions", isLoggedIn, (req, res, next) => {
@@ -148,31 +149,52 @@ router.post(
   }
 );
 
-//POST
+// Like functionality
 router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
   const potionId = req.params.potionId;
-let newWizard = req.session.currentWizard;  
-let newLikeArr = [];
+let newWizard = req.session.currentWizard._id;  
 
-  Potion.findById(potionId)
-    .populate("wizard")
+Potion.findById(potionId)
+//.populate('numberOfLikes').select('-password')
+  .then((potionDetails) => {
+  console.log(potionDetails);
+  if (!potionDetails.numberOfLikes.includes(newWizard)) {
+    console.log("has not like this yet");
+    Potion.findByIdAndUpdate(potionId, { $push: { numberOfLikes: newWizard }}, { new: true } )
+    .then((newPotionDetails) => {
+      res.redirect("/potions");
+    })
+    .catch((err) => {
+      console.log("Error removing potion...", err);
+      next();
+    });
+  } else {
+    console.log("has liked this already!!");
+    Potion.findByIdAndUpdate(potionId, { $pull: { numberOfLikes: newWizard }}, { new: true } )
+    .then((newPotionDetails) => {
+      res.redirect("/potions");
+        // This didnt work AGAIN!! (`potions/${potionId}`);
+    })
+    .catch((err) => {
+      console.log("Error removing potion...", err);
+      next();
+    });
+  }
+    // console.log('This is the result of the .includes() => ', potionDetails.numberOfLikes.includes(newWizard))
+    // check if the wiz is in the array
+    // If not  Potion.findByIdAndUpdate(potionId, { $push: { numberOfLikes: newWizard }}, { new: true } )
+    // If it's in the array Potion.findByIdAndUpdate(potionId, { $pull: { numberOfLikes: newWizard }}, { new: true } )
+  
+})
+.catch((err) => {
+  console.log("Error liking potion...", err);
+  next();
+});
+/*
+  Potion.findByIdAndUpdate(potionId, { $push: { numberOfLikes: newWizard }}, { new: true } )
     .then((potionDetails) => {
       console.log(potionDetails);
-      
-      potionDetails.numberOfLikes.forEach((wizardId) => {
-        console.log(wizardId);
-
-        if (wizardId._id !== req.session.currentWizard._id) {
-          console.log(potionDetails.numberOfLikes);
-          newLikeArr = potionDetails.numberOfLikes.push(req.session.currentWizard);
-          console.log("This is the new Array" + newLikeArr);
-        } else {
-          let index = potionDetails.numberOfLikes.indexOf(wizardId);
-          if (index > -1) {
-            let newLikeArr = potionDetails.numberOfLikes.splice(index, 1);
-          }
-        }
-      });
+      console.log('This is the result of the .includes() => ', potionDetails.numberOfLikes.includes(newWizard))
       res.redirect("/potions/");
         // This didnt work AGAIN!! (`potions/${potionId}`);
     })
@@ -180,7 +202,8 @@ let newLikeArr = [];
       console.log("Error liking potion...", err);
       next();
     });
-
+    */
+/*
     const newDetails = {
       numberOfLikes: newLikeArr,
     }
@@ -195,5 +218,21 @@ let newLikeArr = [];
       console.log("Error updating potion...", err);
       next();
     });
-
+*/
 });
+/*
+      potionDetails.numberOfLikes.forEach((wizardId) => {
+        console.log(wizardId);
+
+        if (wizardId._id !== req.session.currentWizard._id) {
+          console.log(potionDetails.numberOfLikes);
+          newLikeArr = potionDetails.numberOfLikes.push(req.session.currentWizard);
+          console.log("This is the new Array" + newLikeArr);
+        } else {
+          let index = potionDetails.numberOfLikes.indexOf(wizardId);
+          if (index > -1) {
+            let newLikeArr = potionDetails.numberOfLikes.splice(index, 1);
+          }
+        }
+      });
+      */
