@@ -692,3 +692,10 @@ a.fifthFloorLink {
   background: none;
 }
 
+.housepoints h2{
+  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
+  color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  margin-left:15px;
+}
+

@@ -1,10 +1,42 @@
 <body id="hiddenCorridorBody">
 
-<h1>Here are all the points</h1>
+  <h1>Here are all the points</h1>
 
-<h1>Gryffindor: {{allHousePoints.gryffindorHousePoints}}</h1>
-<h1>Ravenclaw: {{allHousePoints.ravenclawHousePoints}}</h1>
-<h1>Hufflepuff: {{allHousePoints.hufflepuffHousePoints}}</h1>
-<h1>Slytherin: {{allHousePoints.slytherinHousePoints}}</h1>
-
+  <div class="container text-center housepoints">
+    <div class="row">
+      <div class="col">
+        <img
+          class="crest"
+          src="../../images/Hogwarts/gryffindorlogo.png"
+          alt="Gryffindor Crest"
+        />
+        <h2>Gryffindor: {{allHousePoints.gryffindorHousePoints}}</h2>
+      </div>
+      <div class="col">
+        <img
+          class="crest"
+          src="../../images/Hogwarts/hufflepufflogo.png"
+          alt="Hufflepuff Crest"
+        />
+        <h2>Ravenclaw: {{allHousePoints.ravenclawHousePoints}}</h2>
+      </div>
+      <div class="col">
+        <img
+          class="crest"
+          src="../../images/Hogwarts/ravenclawlogo.png"
+          alt="Ravenclaw Crest"
+        />
+        <h2>Hufflepuff: {{allHousePoints.hufflepuffHousePoints}}</h2>
+      </div>
+      <div class="col">
+        <img
+          class="crest"
+          src="../../images/Hogwarts/slytherinlogo.png"
+          alt="Slytherin Crest"
+        />
+        <h2>Slytherin: {{allHousePoints.slytherinHousePoints}}</h2>
+      </div>
+    </div>
+  </div>
+  <h2>{{allHousePoints.leadingHouse}} is leading!!</h2>
 </body>
