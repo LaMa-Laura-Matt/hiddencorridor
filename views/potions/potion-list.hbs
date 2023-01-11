@@ -1,13 +1,11 @@
 <body id="hiddenCorridorBody">
 
-  <div class="row"><div class="col text-center" style="width:55vw">
-  <h1>Illicit Potions</h1>
+  <div class="row">
+    <div class="col text-center" style="width:55vw">
+      <h1>Illicit Potions</h1>
+    </div>
   </div>
-  <div class="col createDiv" style="width:40vw">
-  <a class="createPotionButton" href="/create-potion">Create @ Potion</a>
-  </div>
-  </div>
-  
+
   <!-- <div class="container"> </div>-->
   <div class="row">
     {{#each potions}}
@@ -16,29 +14,39 @@
           <div class="card-body">
             <h5 class="card-title1">{{this.potionName}}</h5>
 
-            <h6 class="card-subtitle1 mb-2 text-muted"><span class="createdBy">Created by:  </span><span class="author">{{this.wizard.Wizardname}}</span></h6>
-            
+            <h6 class="card-subtitle1 mb-2 text-muted"><span
+                class="createdBy"
+              >Created by: </span><span
+                class="author"
+              >{{this.wizard.Wizardname}}</span></h6>
+
             <!-- listing each of the ingredients here -->
             <ul class="list-elements">
               {{#each this.ingredients}}
                 <li>{{this}}</li>
               {{/each}}
             </ul>
-            
+
             <div class="row card-footer">
-              <div class="col"><img src="../../images/Hogwarts/icon-full-potion.png">
+              <div class="col"><img
+                  src="../../images/Hogwarts/icon-full-potion.png"
+                />
               </div>
-              <div class="col"><h5 id="likeNumber">{{this.numberOfLikes.length}}</h5></div>
-               <div class="col text-center">
-              <a href="/potions/{{_id}}" class="card-link1">Details</a></div>
-              </div>
+              <div class="col"><h5
+                  id="likeNumber"
+                >{{this.numberOfLikes.length}}</h5></div>
+              <div class="col text-center">
+                <a href="/potions/{{_id}}" class="card-link1">Details</a></div>
             </div>
           </div>
         </div>
-      
+      </div>
+
     {{/each}}
   </div>
+  <div class="row">
+    <div class="col">
+      <a class="createPotionButton" href="/create-potion">Create @ Potion</a>
+    </div>
+  </div>
 </body>
-
-
-
