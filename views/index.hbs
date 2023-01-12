@@ -6,10 +6,10 @@
 
   {{#if wizardDetails}}
 <div class="col">
-      <a href="/auth/profile/{{wizardDetails._id}}">Profile</a>
+      <a href=`/auth/profile/{{wizardDetails._id}}` class="btn customBtnDesgin">Profile</a>
     </div>
     <div class="col">
-      <a href="/fifth-floor">5th Floor</a>
+      <a href="/fifth-floor" class="btn customBtnDesgin">5th Floor</a>
     </div>
 
   {{else}}
@@ -18,10 +18,10 @@
       <a href="/auth/signup" class="btn customBtnDesgin">Sign Up</a>
     </div>
     <div class="col">
-      <a href="/auth/login">Login</a>
+      <a href="/auth/login" class="btn customBtnDesgin">Login</a>
     </div>
     <div class="col">
-      <a href="https://www.google.com/">Im a muggle</a>
+      <a href="https://www.google.com/" class="btn customBtnDesgin">Im a muggle</a>
     </div>
     <div class="col"></div>
     {{/if}}

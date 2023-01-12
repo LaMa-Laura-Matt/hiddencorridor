@@ -79,15 +79,15 @@
     {{#if isOwner}}
       <div class="row potion-links">
         <div class="col">
-          <a href="/potions/{{potionDetails._id}}/edit">Edit details</a>
+          <a href="/potions/{{potionDetails._id}}/edit" class="btn customBtnDesgin">Edit details</a>
         </div>
         <div class="col">
           <form action="/potions/{{potionDetails._id}}/delete" method="POST">
-            <button id="deleteButton">Delete</button>
+            <button id="deleteButton" class="btn customBtnDesgin">Delete</button>
           </form>
         </div>
         <div class="col">
-          <a href="/potions">Back</a>
+          <a href="/potions"class="btn customBtnDesgin">Back</a>
         </div>
       </div>
     {{else}}
@@ -96,7 +96,7 @@
         <div class="col"></div>
         <div class="col"></div>
         <div class="col">
-          <a href="/potions">Back</a>
+          <a href="/potions" class="btn customBtnDesgin">Back</a>
         </div>
       </div>
 
