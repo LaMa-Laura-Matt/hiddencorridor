@@ -67,10 +67,9 @@
 #mainNav {
   font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
-  background-color: antiquewhite;
   opacity: 0.6;
-  border-radius: 10px;
-  width: 80vw;
+  border-radius: 0.375rem;
+  width: auto;
   margin: auto;
 }
 
