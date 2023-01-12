@@ -40,7 +40,7 @@
   opacity: 0.6;
   border-radius: 10px;
   width: 80vw;
-  margin:auto;
+  margin: auto;
 }
 
 #indexBody {
@@ -64,7 +64,7 @@
 }
 
 #indexLinks {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
 }
@@ -78,7 +78,7 @@
 }
 
 #hogwartscrest {
-  max-height:45vh;
+  max-height: 45vh;
   max-width: 33vw;
   position: relative;
   margin-top: 1vh;
@@ -89,16 +89,16 @@
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-} 
+}
 
-#signupBody h2{
+#signupBody h2 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 13vh;
   color: gold;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin-top: 4vh;
   margin-bottom: 5vh;
-  margin-left:14vw;
+  margin-left: 14vw;
 }
 
 .signupForm {
@@ -107,22 +107,24 @@
 }
 
 #signupBtn {
-  margin-left:21vw;
+  margin-left: 21vw;
   margin-top: 1vh;
 }
 
 p.error {
-  font-family: 'Wizard', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
   color: antiquewhite;
   font-size: 2vh;
-  margin-top:2vh;
-  margin-left:10vw;
+  margin-top: 2vh;
+  margin-left: 10vw;
 }
 
 span#message {
-  font-family: 'Wizard', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
   font-size: 2vh;
-  padding-top:2vh;
+  padding-top: 2vh;
 }
 
 #loginBody {
@@ -172,7 +174,7 @@ span#message {
 }
 
 #fifthFloorBody {
-  height:100vh;
+  height: 100vh;
   padding: 30px;
   background-image: url("../images/Hogwarts/corridor.jpg");
   background-size: 100vw 100vh;
@@ -212,40 +214,38 @@ span#message {
   margin-left:10vw;
   position: fixed;
   bottom: 1vh;
-  left:3vw;
-  
+  left: 3vw;
 }
 
 #hiddenLink {
-  height:10vh;
-  width:5vw;
-  position:fixed;
-  top:27vh;
-  right:12vw;
+  height: 10vh;
+  width: 5vw;
+  position: fixed;
+  top: 27vh;
+  right: 12vw;
 }
- 
-#hiddenLink:hover + #alohamora{
-  display:block;
-  height:25vh;
-  position:fixed;
-  top:40vh;
-  right:40vw;
+
+#hiddenLink:hover + #alohamora {
+  display: block;
+  height: 25vh;
+  position: fixed;
+  top: 40vh;
+  right: 40vw;
 }
 
 #alohamora {
   display: none;
-  height:25vh;
-  position:fixed;
-  top:40vh;
-  right:40vw;
+  height: 25vh;
+  position: fixed;
+  top: 40vh;
+  right: 40vw;
 }
-
 
 #hiddenCorridorBody {
   padding: 30px;
   background-image: url("../images/Hogwarts/hidden-corridor.jpg");
-  background-size:cover;
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,11 +255,11 @@ span#message {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 10vh;
   color: darkgreen;
-  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow, 0 -1px greenyellow;
-  margin-top:2.5vh;
+  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow,
+    0 -1px greenyellow;
+  margin-top: 2.5vh;
   margin-bottom: 2vh;
 }
-
 
 .card {
   background-color: rgb(236, 199, 62, 0.4);
@@ -282,20 +282,21 @@ span#message {
   color: black;
 }
 div.card {
-  margin:15px;
+  margin: 15px;
 }
 
 div.row.card-footer {
-  padding:0;
-  display:flex;
+  padding: 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card-footer a{
+.card-footer a {
   text-decoration: none;
   color: antiquewhite;
-  font-family: "Magic School", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Magic School", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
   font-size: 6vh;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -303,9 +304,10 @@ div.row.card-footer {
 #likeNumber {
   font-family: "Bottomrock", Arial, Helvetica, sans-serif;
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
   font-size: 6vh;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .createdBy {
@@ -318,15 +320,16 @@ div.row.card-footer {
   font-family: "Bottomrock", Helvetica, Arial, sans-serif;
   font-size: 3.5vh;
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
-  margin-left:15px;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
+  margin-left: 15px;
 }
 
 #potionDetailsBody {
   padding: 30px;
   background-image: url("../images/Hogwarts/hidden-corridor.jpg");
-  background-size:cover;
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -336,25 +339,34 @@ div.row.card-footer {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 10vh;
   color: darkgreen;
-  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow, 0 -1px greenyellow;
-  margin-top:2.5vh;
+  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow,
+    0 -1px greenyellow;
+  margin-top: 2.5vh;
   margin-bottom: 2vh;
-  
 }
 
 #individualPotionAuthor {
   font-family: "Bottomrock", Helvetica, Arial, sans-serif;
-  font-size: 7vh;
+  font-size: 5vh;
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
-  margin-top:65px;
-  
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
+  margin-top: 65px;
 }
 
+@media only screen and (max-width: 600px) {
+  #individualPotionAuthor {
+    margin-top: 5vh;
+    margin-bottom: 10px;
+    font-size: 4vh;
+  }
+}
+
+
 .ingredientList {
-  margin-top:20px;
-  margin-left:11vw;
-  margin-bottom:3vh;
+  margin-top: 20px;
+  margin-left: 11vw;
+  margin-bottom: 3vh;
 }
 
 #brewTime {
@@ -363,20 +375,22 @@ div.row.card-footer {
 
 #difficulty {
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
   margin-left: 13.5vw;
-  margin-top:5vh
+  margin-top: 5vh;
 }
 
 #difficultyResult {
-  margin-left: 2vw
+  margin-left: 2vw;
 }
 
 #sideEffects {
-  margin-left:13.5vw;
+  margin-left: 13.5vw;
   margin-top: 3vh;
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
 }
 
 .potion-links {
@@ -385,11 +399,11 @@ div.row.card-footer {
   color: antiquewhite;
   font-size: 45px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  margin-left:15vw;
+  margin-left: 15vw;
   margin-top: 5vh;
 }
 
-.potion-links a{
+.potion-links a {
   text-decoration: none;
   color: antiquewhite;
 }
@@ -409,36 +423,37 @@ div.row.card-footer {
 .potion-details {
   font-family: "Bottomrock", Arial, Helvetica, sans-serif;
   color: antiquewhite;
-  font-size:3vh;
+  font-size: 3vh;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: rgb(236, 199, 62, 0.4);
   border-radius: 0.375rem;
   margin-top:2vh;
 }
 
-#createPotionForm label{
+#createPotionForm label {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 6vh;
-color: greenyellow;
-text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+  color: greenyellow;
+  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen,
+    0 -1px darkgreen;
 }
 
-#createPotionForm input{
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+#createPotionForm input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
 }
 
-#createPotionForm textarea{
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+#createPotionForm textarea {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
-  width:268px;
+  width: 268px;
 }
 
-#createPotionForm select{
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+#createPotionForm select {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
   width: 268px;
 }
@@ -447,21 +462,21 @@ text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgree
   position: relative;
   background-color: yellowgreen;
   width: 243px;
-  height:44px;
+  height: 44px;
   font-size: 20px;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 input {
   border-radius: 0.375rem;
   padding: 5px 12px;
-  width:238px;
+  width: 238px;
 }
 
 input.btn {
   padding: 1px 6px;
-  height:30px;
-  width:30px;
+  height: 30px;
+  width: 30px;
   background-color: yellowgreen;
   color: white;
   border: none;
@@ -471,52 +486,53 @@ input.btn {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 6vh;
   color: greenyellow;
-  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen,
+    0 -1px darkgreen;
 }
 
 #potionEditForm label span.form-label {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 6vh;
   color: greenyellow;
-  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen,
+    0 -1px darkgreen;
 }
 
-
 #potionEditForm input {
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
 }
 
 #potionEditForm select {
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
 }
 
 #potionEditForm textarea {
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   color: black;
 }
 
 #potionEditForm .form-control {
-  margin-top:24px;
+  margin-top: 24px;
 }
 #potionEditForm .form-select {
-  margin-top:24px;
+  margin-top: 24px;
 }
 
 .createPotionButton {
   white-space: nowrap;
   text-decoration: none;
   padding: 1px 30px;
-  border-radius:0.375rem;
+  border-radius: 0.375rem;
   background-color: green;
   color: yellowgreen;
   font-family: "Parseltongue", Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size:40px;
+  font-size: 40px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   letter-spacing: 0.2vw;
   border: solid yellowgreen 1px;
@@ -530,9 +546,9 @@ input.btn {
 
 
 #ravenclawCommomRoom {
-  padding:30px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/ravenclaw-common.jpg");
-  background-size: cover;  
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -543,18 +559,18 @@ input.btn {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 12vh;
   color: blue;
-  text-shadow: -2px 0 #CD7F32, 0 2px #CD7F32, 2px 0 #CD7F32, 0 -2px #CD7F32;
-  margin-top:5vh;
+  text-shadow: -2px 0 #cd7f32, 0 2px #cd7f32, 2px 0 #cd7f32, 0 -2px #cd7f32;
+  margin-top: 5vh;
 }
 
-#ravenclawCommomRoom section h3{
+#ravenclawCommomRoom section h3 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 9vh;
   color: blue;
-  text-shadow: -2px 0 #CD7F32, 0 2px #CD7F32, 2px 0 #CD7F32, 0 -2px #CD7F32;
+  text-shadow: -2px 0 #cd7f32, 0 2px #cd7f32, 2px 0 #cd7f32, 0 -2px #cd7f32;
 }
 
-#ravenclawCommomRoom section h5{
+#ravenclawCommomRoom section h5 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: CD7F32;
@@ -562,9 +578,9 @@ input.btn {
 }
 
 #hufflepuffCommomRoom {
-  padding:30px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/hufflepuff-common.jpg");
-  background-size: cover;  
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -576,17 +592,17 @@ input.btn {
   font-size: 12vh;
   color: yellow;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  margin-top:5vh;
+  margin-top: 5vh;
 }
 
-#hufflepuffCommomRoom section h3{
+#hufflepuffCommomRoom section h3 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 9vh;
   color: yellow;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-#hufflepuffCommomRoom section h5{
+#hufflepuffCommomRoom section h5 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: black;
@@ -594,9 +610,9 @@ input.btn {
 }
 
 #slytherinCommomRoom {
-  padding:30px;
+  padding: 30px;
   background-image: url("../images/Hogwarts/slytherin-common.jpg");
-  background-size: cover;  
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -608,17 +624,17 @@ input.btn {
   font-size: 12vh;
   color: green;
   text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
-  margin-top:5vh;
+  margin-top: 5vh;
 }
 
-#slytherinCommomRoom section h3{
+#slytherinCommomRoom section h3 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 9vh;
   color: green;
   text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
 }
 
-#slytherinCommomRoom section h5{
+#slytherinCommomRoom section h5 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: silver;
@@ -627,25 +643,26 @@ input.btn {
 
 .profileCategories {
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
 }
 
 .profileAnswersName {
-  margin-left:90px;
+  margin-left: 90px;
 }
 
 .profileAnswersYear {
-  margin-left:15px;
+  margin-left: 15px;
 }
 
 .profileAnswersAlias {
-  margin-left:82px;
+  margin-left: 82px;
 }
 
 #gryffindorCommomRoom {
-  padding:50px;
+  padding: 50px;
   background-image: url("../images/Hogwarts/gryffindor-common.jpg");
-  background-size: cover;  
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -657,26 +674,26 @@ input.btn {
   font-size: 12vh;
   color: red;
   text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
-  margin-top:5vh;
+  margin-top: 5vh;
 }
 
 
-#gryffindorCommomRoom section h3{
+#gryffindorCommomRoom section h3 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 9vh;
   color: red;
   text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
 }
 
-#gryffindorCommomRoom section h5{
+#gryffindorCommomRoom section h5 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 7vh;
   color: gold;
   text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
 .crest {
-  height:35vh;
-  margin-top:3vh;
+  height: 35vh;
+  margin-top: 3vh;
 }
 
 a.fifthFloorLink {
@@ -684,7 +701,7 @@ a.fifthFloorLink {
   font-size: 5vh;
   color: purple;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 #fifthFloorLink {
@@ -692,22 +709,29 @@ a.fifthFloorLink {
 }
 
 #hiddenCorridorRoomsImageLinks {
-  margin-top:10vh;
+  margin-top: 10vh;
 }
 
 #hiddenCorridorImg {
-  height:33vh;
+  height: 33vh;
+}
+#likebox {
+  margin-left: auto;
+  margin-right: 10vh;
 }
 
 #wandIcon {
   background: none;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-.housepoints h2{
+.housepoints h2 {
   font-family: "Bottomrock", Helvetica, Arial, sans-serif;
   color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
-  margin-left:15px;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
+    0 -1px antiquewhite;
+  margin-left: 15px;
 }
 
 #editProfileBody {

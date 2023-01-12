@@ -3,14 +3,22 @@
   <section class="potion-details">
     <div class="row titleRow">
 
-        <div class="col-1 text-center">
+      <div class="col-7 text-center"><h1>{{potionDetails.potionName}}</h1></div>
+      <div class="col-5"><h5 id="individualPotionAuthor">Brewed by:
+          {{potionDetails.wizard.Wizardname}}</h5></div>
+    </div>
+
+    <div class="row">
+      
+
+      <div class="col text-center">
       {{potionDetails.numberOfLikes.length}}
       {{#if wizardHasNotLiked}}
         <img src="../../images/Hogwarts/icon-empty-potion.png" />
       {{else}}
         <img src="../../images/Hogwarts/icon-full-potion.png" />
       {{/if}}
-   
+
       <form
         method="post"
         action="/potions/{{potionDetails._id}}/like"
@@ -29,23 +37,18 @@
           value="submit_value"
           class="link-button"
           id="wandIcon"
-          border="none"
+          style="border: none;"
         >
           <img src="../../images/Hogwarts/icon-blue-wand.png" />
         </button>
+        {{#if wizardHasNotLiked}}
+          <p> Like this potion </p>
+        {{else}}
+          <p> Remove your like </p>
+        {{/if}}
       </form>
     </div>
 
-      <div class="col-6 text-center"><h1>{{potionDetails.potionName}}</h1></div>
-      <div class="col-5"><h5 id="individualPotionAuthor">Brewed by:
-          {{potionDetails.wizard.Wizardname}}</h5></div>
-    </div>
-    
-
-    
-    
-
-    <div class="row">
       <div class="col"><ul class="ingredientList">
           <h3><u>Ingredients</u></h3>{{#each potionDetails.ingredients}}
             <br />
@@ -70,7 +73,7 @@
     </p>
     <p id="sideEffects">
       Possible side effects include:
-      {{potionDetails.sideEffects}}
+      <span id="difficultyResult">{{potionDetails.sideEffects}} </span>
     </p>
 
     {{#if isOwner}}
