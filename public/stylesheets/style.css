@@ -470,6 +470,11 @@ div.row.card-footer {
   text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
 }
 
+.customMargin {
+  margin-top:6vh;
+  }
+
+
 .potion-details {
   font-family: "Augusta", Arial, Helvetica, sans-serif;
   font-size: 3.5vh;
