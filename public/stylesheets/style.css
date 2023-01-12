@@ -53,6 +53,16 @@
   text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
 }
 
+.largeTitleColor {
+  color: gold;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.smallTitleColor {
+  color: gold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 
 #mainNav {
   font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
@@ -119,24 +129,29 @@
   background-repeat: no-repeat;
 }
 
+#signupBody label {
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
+  font-size: 5vh;
+}
+
 #signupBody h2 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 13vh;
-  color: gold;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin-top: 4vh;
-  margin-bottom: 5vh;
-  margin-left: 14vw;
+  margin-bottom: 4vh;
 }
 
 .signupForm {
-  width: 30vw;
-  margin: 2.5vh 10vw;
+  margin: 2.5vh 2.5vw;
 }
 
 #signupBtn {
-  margin-left: 21vw;
-  margin-top: 1vh;
+  width:18vw;
+}
+
+#signupSubmitButtonRow {
+  display: flex;
+  justify-content: center;
 }
 
 p.error {
@@ -173,6 +188,7 @@ span#message {
   margin:3vh;
   padding-left: 5vw;
   padding-right:5vw;
+  padding-bottom:2vh;
 }
 
 #intro {
@@ -625,19 +641,17 @@ input.btn {
   font-size: 12vh;
   color: blue;
   text-shadow: -2px 0 #cd7f32, 0 2px #cd7f32, 2px 0 #cd7f32, 0 -2px #cd7f32;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 #ravenclawCommomRoom section h3 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 9vh;
+  font-size: 8vh;
   color: blue;
   text-shadow: -2px 0 #cd7f32, 0 2px #cd7f32, 2px 0 #cd7f32, 0 -2px #cd7f32;
 }
 
 #ravenclawCommomRoom section h5 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 7vh;
+  font-size: 6vh;
   color: CD7F32;
   text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
 }
@@ -657,19 +671,17 @@ input.btn {
   font-size: 12vh;
   color: yellow;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 #hufflepuffCommomRoom section h3 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 9vh;
+  font-size: 8vh;
   color: yellow;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 #hufflepuffCommomRoom section h5 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 7vh;
+  font-size: 6vh;
   color: black;
   text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
@@ -689,19 +701,17 @@ input.btn {
   font-size: 12vh;
   color: green;
   text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 #slytherinCommomRoom section h3 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 9vh;
+  font-size: 8vh;
   color: green;
   text-shadow: -2px 0 silver, 0 2px silver, 2px 0 silver, 0 -2px silver;
 }
 
 #slytherinCommomRoom section h5 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 7vh;
+  font-size: 6vh;
   color: silver;
   text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
 }
@@ -710,6 +720,10 @@ input.btn {
   color: black;
   text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
     0 -1px antiquewhite;
+}
+
+#profileSection {
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
 }
 
 .profileAnswersName {
@@ -739,20 +753,18 @@ input.btn {
   font-size: 12vh;
   color: red;
   text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 
 #gryffindorCommomRoom section h3 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 9vh;
+  font-size: 8vh;
   color: red;
   text-shadow: -2px 0 gold, 0 2px gold, 2px 0 gold, 0 -2px gold;
 }
 
 #gryffindorCommomRoom section h5 {
-  font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 7vh;
+  font-size: 6vh;
   color: gold;
   text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
@@ -815,12 +827,12 @@ a.fifthFloorLink {
 }
 
 .editLabel {
-  font-family: "Bottomrock", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Augusta", Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 25px;
-  color: black;
+  color: gold;
   margin-top: 2vh;
   margin-bottom: 1vh;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .editForm {
