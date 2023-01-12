@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function addInput(){
   var newdiv = document.createElement('div');
   //newdiv.id = dynamicInput[counter];
-  newdiv.innerHTML = "<br><input type='text' name='ingredients'> <input type='button' value='-' onClick='removeInput(this);'>";
+  newdiv.innerHTML = "<br><input type='text' name='ingredients'> <input type='button' class='btn' value='-' onClick='removeInput(this);'>";
   document.getElementById('formulario').appendChild(newdiv);
 }
 function addInputInUpdatePotion(){
    var newdiv = document.createElement('li');
   //newdiv.id = dynamicInput[counter];
-  newdiv.innerHTML = "<br><input type='text' name='ingredients'> <input type='button' class='btn btn-light' value='-' onClick='removeInput(this);'>";
+  newdiv.innerHTML = "<br><input type='text' name='ingredients'> <input type='button' class='btn' value='-' onClick='removeInput(this);'>";
   document.getElementById('updateIngredients').appendChild(newdiv);
 }
 
