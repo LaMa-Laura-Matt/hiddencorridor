@@ -723,3 +723,32 @@ a.fifthFloorLink {
     0 -1px antiquewhite;
   margin-left: 15px;
 }
+
+#editProfileBody {
+  padding: 30px;
+  background-image: url("../images/Hogwarts/Great_hall.jpg");
+  background-position:bottom;
+}
+
+#editProfileBody h1{
+  font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 100px;
+  color: antiquewhite;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.editLabel {
+  font-family: "Bottomrock", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 25px;
+  color: black;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
+}
+
+.editForm {
+  font-family: 'Times New Roman', Times, serif;
+
+}
