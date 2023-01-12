@@ -3,10 +3,9 @@
 
 
   <div class="row text-center"><h1>Edit Profile: {{Wizardname}}</h1></div>
-
-  <form id="profileEditForm" action="/auth/profile/{{_id}}/edit" method="POST">
-    
-    <div class="col signupForm ">
+  
+  <div class="row signupForm ">
+    <form action="/auth/profile/{{_id}}/edit" method="POST">
       <label class="form-label editLabel">Your Name
         <textarea
           style="width:25vw"
@@ -18,16 +17,19 @@
         >{{name}}
         </textarea>
       </label>
- 
-          <label class="form-label editLabel">Select House
-          <select name="house" class="form-select editForm" aria-label="house" style="width:25vw">
-            <option selected>{{house}}</option>
-            <option value="gryffindor">Gryffindor</option>
-            <option value="hufflepuff">Hufflepuff</option>
+  </div>
+  
+  <div class="row signupForm">
+      <label class="form-label editLabel">Select House
+        <select name="house" class="form-select editForm" aria-label="house" style="width:25vw">
+          <option selected>{{house}}</option>
+          <option value="gryffindor">Gryffindor</option>
+          <option value="hufflepuff">Hufflepuff</option>
             <option value="ravenclaw">Ravenclaw</option>
             <option value="slytherin">Slytherin</option>
           </select></label>
-    
+    </div>
+    <div class="row signupForm">
       <label class="form-label editLabel">First Year Of Hogwarts
       <input
             type="number"
@@ -38,8 +40,12 @@
             aria-label="firstYearOfHogwarts"
           />
       </label>
-      <button type="submit" class="btn customBtnDesgin">Confirm</button>
-    </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-4"><button type="submit" class="btn customBtnDesgin" >Confirm</button></div>
+     
+    
+
 
 
     {{#if errorMessage}}
@@ -48,6 +54,9 @@
 
     
   </form>
+  
 
 </body>
+
+
 

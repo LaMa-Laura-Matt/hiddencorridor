@@ -118,7 +118,6 @@
   border: black 1px solid;
 }
 
-
 #signupBody {
   padding: 30px;
   background-image: url("../images/Hogwarts/sorting-hat.jpg");
@@ -139,7 +138,7 @@
 }
 
 .signupForm {
-  margin: 2.5vh 2.5vw;
+  margin: 0 2.5vw;
 }
 
 #signupBtn {
@@ -306,9 +305,6 @@ font-size: 4.5vh;
 #hiddenCorridorBody h3 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 6vh;
-  color: darkgreen;
-  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow,
-    0 -1px greenyellow;
   margin-top: 2.5vh;
   margin-bottom: 2vh;
 }
@@ -348,13 +344,11 @@ font-size: 4.5vh;
   justify-content: center;
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 5vh;
-  color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
   font-weight:bold;
 }
 
 .card-text1 {
-  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
   font-size: 3vh;
   color: black;
 }
@@ -369,17 +363,8 @@ div.row.card-footer {
   align-items: center;
 }
 
-.card-footer a {
-  text-decoration: none;
-  color: antiquewhite;
-  font-family: "Magic School", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
-  font-size: 6vh;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
 #likeNumber {
-  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
+  font-family: "Augusta", Arial, Helvetica, sans-serif;
   color: black;
   text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
     0 -1px antiquewhite;
@@ -389,8 +374,9 @@ div.row.card-footer {
 
 .createdBy {
   font-family: "Wizard", Helvetica, Arial, sans-serif;
-  font-size: 2vh;
-  color: black;
+  font-size: 3vh;
+  color: purple;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .author {
@@ -466,18 +452,9 @@ div.row.card-footer {
 }
 
 .potion-links {
-  text-decoration: none;
-  font-family: "Magic School", Arial, Helvetica, sans-serif;
-  color: antiquewhite;
   font-size: 45px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-left: 15vw;
   margin-top: 5vh;
-}
-
-.potion-links a {
-  text-decoration: none;
-  color: antiquewhite;
 }
 
 #deleteButton {
@@ -487,9 +464,10 @@ div.row.card-footer {
 }
 
 .list-elements {
-  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
-  font-size: 3vh;
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
+  font-size: 3.5vh;
   color: black;
+  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite, 0 -1px antiquewhite;
 }
 
 .potion-details {
@@ -505,9 +483,6 @@ div.row.card-footer {
 #createPotionForm label {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 6vh;
-  color: greenyellow;
-  text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen,
-    0 -1px darkgreen;
 }
 
 #createPotionForm input {
@@ -593,21 +568,6 @@ input.btn {
 }
 #potionEditForm .form-select {
   margin-top: 24px;
-}
-
-.createPotionButton {
-  white-space: nowrap;
-  text-decoration: none;
-  padding: 1px 30px;
-  border-radius: 0.375rem;
-  background-color: green;
-  color: yellowgreen;
-  font-family: "Parseltongue", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  letter-spacing: 0.2vw;
-  border: solid yellowgreen 1px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -764,14 +724,6 @@ input.btn {
   margin-top: 3vh;
 }
 
-a.fifthFloorLink {
-  font-family: "Wizard", Arial, Helvetica, sans-serif;
-  font-size: 5vh;
-  color: purple;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-decoration: none;
-}
-
 #fifthFloorLink {
   margin-top: 6vh;
 }
@@ -828,7 +780,10 @@ a.fifthFloorLink {
 
 .editForm {
   font-family: 'Times New Roman', Times, serif;
-
+} 
+.signupEditFormConfirm{
+  display: flex;
+  justify-content: center;
 }
 
 .profileBackground {

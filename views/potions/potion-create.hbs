@@ -1,11 +1,17 @@
 <body id="hiddenCorridorBody">
 
-  <h1>ohh think you can brew do you?</h1>
+  <section class="potion-details">
+
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-5"><h1 class="largeTitleColor">Create Potion</h1></div>
+    <div class="col-6 howDidYou smallTitleColor"><h3> - Oh think you can brew?</h3></div>
+</div>
   <form id="createPotionForm" action="/create-potion" method="POST">
 
     <div class="row">
       <div class="col text-center">
-        <label class="form-label">Potion Name
+        <label class="form-label smallTitleColor">Potion Name
           <input
             type="text"
             class="form-control"
@@ -17,7 +23,7 @@
       </div>
 
       <div class="col text-center">
-          <label class="form-label">Difficulty
+          <label class="form-label smallTitleColor">Difficulty
             <select
               name="difficulty"
               class="form-select"
@@ -36,13 +42,13 @@
 
     <div class="row">
       <div class="col text-center">
-        <label class="form-label">Method
+        <label class="form-label smallTitleColor">Method
           <textarea placeholder="1. Step one, 2. Step two, etc" type="text" class="form-control" name="method" rows="4"></textarea>
         </label>
       </div>
       
       <div id="formulario" class="col text-center">
-        <label class="form-label">Ingredients
+        <label class="form-label smallTitleColor">Ingredients
           
             <br /><input type="text" name="ingredients" />
           
@@ -56,7 +62,7 @@
         
 
         <div class="col text-center">
-          <label class="form-label">Side Effects
+          <label class="form-label smallTitleColor">Side Effects
             <input
               type="text"
               class="form-control"
@@ -67,7 +73,7 @@
           </label>
         </div>
         <div class="col text-center">
-        <label class="form-label">Brewing Time
+        <label class="form-label smallTitleColor">Brewing Time
           <input
             type="number"
             class="form-control"
@@ -78,8 +84,8 @@
         </label>
       </div>
       </div>
-      <div class="row">
-        <div class="col"><button type="submit" class="btn customBtnDesgin"> Create your poison </button></div>
+      <div class="row text-center">
+        <div class="col"><button type="submit" class="btn customBtnDesgin">Create</button></div>
       </div>
       
       
@@ -89,5 +95,5 @@
 
     
   </form>
-
+</section>
 </body>
