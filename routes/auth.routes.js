@@ -247,28 +247,13 @@ router.post("/profile/:profileId/edit", isLoggedIn, (req, res, next) => {
 
   Wizard.findByIdAndUpdate(profileId, newDetails, { new: true })
     .then((updatedDetails) => {
-      let gryffindor = false;
-      let hufflepuff = false;
-      let ravenclaw = false;
-      let slytherin = false;
 
-      if (updatedDetails.house === "gryffindor") {
-        gryffindor = true;
-      } else if (updatedDetails.house === "hufflepuff") {
-        hufflepuff = true;
-      } else if (updatedDetails.house === "ravenclaw") {
-        ravenclaw = true;
-      } else if (updatedDetails.house === "slytherin") {
-        slytherin = true;
-      }
-      res.render("auth/profile", {
-        wizard: updatedDetails,
-        gryffindor: gryffindor,
-        hufflepuff: hufflepuff,
-        ravenclaw: ravenclaw,
-        slytherin: slytherin,
-      });
-      //res.redirect("/auth/profile/" + profileId);
+      // Add the Wizard object to the session object
+      req.session.currentWizard = updatedDetails.toObject();
+      // Remove the password field
+      delete req.session.currentWizard.password;
+     
+      res.redirect("/auth/profile/" + profileId);
     })
     .catch((err) => {
       console.log("Error updating wizard...", err);
