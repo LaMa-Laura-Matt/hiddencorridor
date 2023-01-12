@@ -85,6 +85,7 @@ router.get("/potions/:potionid", isLoggedIn, (req, res, next) => {
       ) {
         isOwner = true;
       }
+      console.log(potionDetails.wizard.Wizardname);
 
       res.render("potions/potion", {
         potionDetails: potionDetails,
@@ -177,12 +178,12 @@ router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
     .then((potionDetails) => {
       console.log(potionDetails);
       if (!potionDetails.numberOfLikes.includes(newWizard)) {
-        console.log("has not like this yet");
         Potion.findByIdAndUpdate(
           potionId,
           { $push: { numberOfLikes: newWizard } },
           { new: true }
         )
+          .populate("wizard")
           .then((newPotionDetails) => {
             res.render("potions/potion", {
               potionDetails: newPotionDetails,
@@ -200,13 +201,13 @@ router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
           { $pull: { numberOfLikes: newWizard } },
           { new: true }
         )
+          .populate("wizard")
           .then((newPotionDetails) => {
             wizardHasNotLiked = true;
             res.render("potions/potion", {
               potionDetails: newPotionDetails,
               wizardHasNotLiked: wizardHasNotLiked,
             });
-            // This didnt work AGAIN!! (`potions/${potionId}`);
           })
           .catch((err) => {
             console.log("Error removing potion...", err);
