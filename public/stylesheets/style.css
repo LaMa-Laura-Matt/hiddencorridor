@@ -87,17 +87,20 @@
 
 #indexTitle {
   font-family: "Magic School", Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 140px;
-  color: gold;
-  margin-top: 0vh;
-  margin-bottom: 0vh;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 15vh;
 }
 
-#indexLinks {
+.indexLinks {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+
+#hogwartscrest {
+  max-height: 45vh;
+  max-width: 33vw;
+  margin-top: 1vh;
 }
 
 .customBtnDesgin {
@@ -115,12 +118,6 @@
   border: black 1px solid;
 }
 
-#hogwartscrest {
-  max-height: 45vh;
-  max-width: 33vw;
-  position: relative;
-  margin-top: 1vh;
-}
 
 #signupBody {
   padding: 30px;
@@ -260,6 +257,10 @@ span#message {
   bottom: 1vh;
   left: 3vw;
 }
+.fifthFloorLink {
+font-family: "Augusta", Helvetica, Arial, sans-serif;
+font-size: 4.5vh;
+}
 
 #hiddenLink {
   height: 10vh;
@@ -297,9 +298,7 @@ span#message {
 
 #hiddenCorridorBody h1 {
   font-family: "Magic School", Helvetica, Arial, sans-serif;
-  font-size: 13vh;
-  color: gold;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 12vh;
   margin-top: 2.5vh;
   margin-bottom: 2vh;
 }
@@ -321,11 +320,9 @@ span#message {
 #hiddenCorridorIntro {
   font-family: "Augusta", Helvetica, Arial, sans-serif;
   font-size: 3vh;
-  color: gold;
   margin-top: 1vh;
   width:80vw;
   padding-left: 20px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #hiddenCorridorRoomsImageLinks a{
@@ -334,7 +331,6 @@ span#message {
 }
 
 .hiddenRoomLinks {
-  text-decoration: none;
   font-family: "Magic School", Helvetica, Arial, sans-serif;
   font-size: 5vh;
   color: gold;
@@ -343,7 +339,7 @@ span#message {
 }
 
 .card {
-  background-color: rgb(236, 199, 62, 0.4);
+  background-color: rgba(14, 240, 14, 0.3);
   margin: 1 1 1 1;
 }
 
@@ -419,20 +415,22 @@ div.row.card-footer {
 #potionDetailsBody h1 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
   font-size: 10vh;
-  color: darkgreen;
-  text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow,
-    0 -1px greenyellow;
   margin-top: 2.5vh;
   margin-bottom: 2vh;
 }
 
 #individualPotionAuthor {
-  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
   font-size: 5vh;
   color: black;
   text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
     0 -1px antiquewhite;
   margin-top: 65px;
+}
+
+.potionHeading {
+  font-family: "Parseltongue", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:7vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -441,13 +439,6 @@ div.row.card-footer {
     margin-bottom: 10px;
     font-size: 4vh;
   }
-}
-
-
-.ingredientList {
-  margin-top: 20px;
-  margin-left: 11vw;
-  margin-bottom: 3vh;
 }
 
 #brewTime {
@@ -491,7 +482,7 @@ div.row.card-footer {
 
 #deleteButton {
   background-color: red;
-  color: antiquewhite;
+  color: gold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -502,11 +493,11 @@ div.row.card-footer {
 }
 
 .potion-details {
-  font-family: "Bottomrock", Arial, Helvetica, sans-serif;
+  font-family: "Augusta", Arial, Helvetica, sans-serif;
+  font-size: 3.5vh;
   color: antiquewhite;
-  font-size: 3vh;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  background-color: rgb(236, 199, 62, 0.4);
+  background-color: rgba(14, 240, 14, 0.3);
   border-radius: 0.375rem;
   margin-top:2vh;
 }

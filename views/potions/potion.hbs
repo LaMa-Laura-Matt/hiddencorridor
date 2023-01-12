@@ -3,15 +3,13 @@
   <section class="potion-details">
     <div class="row titleRow">
 
-      <div class="col-7 text-center"><h1>{{potionDetails.potionName}}</h1></div>
-      <div class="col-5"><h5 id="individualPotionAuthor">Brewed by:
-          {{potionDetails.wizard.Wizardname}}</h5></div>
+      <div class="col-7 text-center smallTitleColor"><h1>{{potionDetails.potionName}}</h1></div>
+      <div class="col-5"><h5 id="individualPotionAuthor">Brewed by:{{potionDetails.wizard.Wizardname}}</h5></div>
     </div>
 
     <div class="row">
-      
-
-      <div class="col text-center">
+      <div class="col-1"></div>
+      <div class="col-1 text-center">
       {{potionDetails.numberOfLikes.length}}
       {{#if wizardHasNotLiked}}
         <img src="../../images/Hogwarts/icon-empty-potion.png" />
@@ -42,39 +40,44 @@
           <img src="../../images/Hogwarts/icon-blue-wand.png" />
         </button>
         {{#if wizardHasNotLiked}}
-          <p> Like this potion </p>
+          <p class="smallTitleColor">Wand to like</p>
         {{else}}
-          <p> Remove your like </p>
+          <p class="smallTitleColor">Unlike</p>
         {{/if}}
       </form>
     </div>
-
-      <div class="col"><ul class="ingredientList">
-          <h3><u>Ingredients</u></h3>{{#each potionDetails.ingredients}}
-            <br />
+    <div class="col-1"></div>
+      <div class="col-4">
+        <h3 class="smallTitleColor potionHeading">Ingredients:</h3>
+        <ul>{{#each potionDetails.ingredients}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
       </div>
-      <div class="col">
-        <p>
-          <h3><u>Method</u></h3>
-          <br />{{potionDetails.method}}
+
+      <div class="col-5">
+          <h3 class="smallTitleColor potionHeading">Method:</h3>
+          <p>{{potionDetails.method}}</p>
+        
+      
+          <h3 class="smallTitleColor potionHeading">Time to Brew:</h3>
+          <p>{{potionDetails.potionTime}}</p>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-4">
+        <p><span class="smallTitleColor potionHeading">Difficulty:</span>
+            <span id="difficultyResult">{{potionDetails.difficulty}} </span>
         </p>
-        <p>
-          <h3 id="brewTime">Time to Brew:</h3>
-          {{potionDetails.potionTime}}
+      </div>
+      <div class="col-5">
+        <p><span class="smallTitleColor potionHeading">Side Effects:</span>
+            <span id="difficultyResult">{{potionDetails.sideEffects}} </span>
         </p>
       </div>
     </div>
-
-    <p><span id="difficulty">Difficulty:</span>
-      <span id="difficultyResult">{{potionDetails.difficulty}} </span>
-    </p>
-    <p id="sideEffects">
-      Possible side effects include:
-      <span id="difficultyResult">{{potionDetails.sideEffects}} </span>
-    </p>
 
     {{#if isOwner}}
       <div class="row potion-links">

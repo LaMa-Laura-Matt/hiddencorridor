@@ -1,33 +1,38 @@
 <body id="indexBody">
 
-  <div id="indexTitle"><p>Welcome to the Hidden Corridor</p></div>
+  <section class="sectionBackground">
+    
+    <div  class="largeTitleColor" id="indexTitle"><p>Welcome to the Hidden Corridor</p></div>
+    
+    <div class="container text-center indexLinks">
 
-  <div class="container text-center" id="indexLinks">
+      {{#if wizardDetails}}
+        <div class="col">
+          <a href=`/auth/profile/{{wizardDetails._id}}` class="btn customBtnDesgin">Profile</a>
+        </div>
+        <div class="col">
+          <a href="/fifth-floor" class="btn customBtnDesgin">5th Floor</a>
+        </div>
 
-  {{#if wizardDetails}}
-<div class="col">
-      <a href=`/auth/profile/{{wizardDetails._id}}` class="btn customBtnDesgin">Profile</a>
+      {{else}}
+        <div class="col"></div>
+        <div class="col">
+          <a href="/auth/signup" class="btn customBtnDesgin">Sign Up</a>
+        </div>
+        <div class="col">
+          <a href="/auth/login" class="btn customBtnDesgin">Login</a>
+        </div>
+        <div class="col">
+          <a href="https://www.google.com/" class="btn customBtnDesgin">Im a muggle</a>
+        </div>
+        <div class="col"></div>
+      {{/if}}
+    
     </div>
-    <div class="col">
-      <a href="/fifth-floor" class="btn customBtnDesgin">5th Floor</a>
+    <div class="indexLinks">
+      <img id="hogwartsCrest" src="../../images/Hogwarts/hogwartslogo.png" alt="Hogwarts Crest">
     </div>
+  
 
-  {{else}}
-    <div class="col"></div>
-    <div class="col">
-      <a href="/auth/signup" class="btn customBtnDesgin">Sign Up</a>
-    </div>
-    <div class="col">
-      <a href="/auth/login" class="btn customBtnDesgin">Login</a>
-    </div>
-    <div class="col">
-      <a href="https://www.google.com/" class="btn customBtnDesgin">Im a muggle</a>
-    </div>
-    <div class="col"></div>
-    {{/if}}
-
-  </div>
-
-   <img id="hogwartsCrest" src="../../images/Hogwarts/hogwartslogo.png" alt="Hogwarts Crest">
-
+  </section>
 </body>
