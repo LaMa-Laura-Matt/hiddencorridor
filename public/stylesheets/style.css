@@ -33,6 +33,27 @@
   src: url("../fonts/Bottom\ Rock.ttf");
 }
 
+.gryffindor{
+  color: red;
+  text-shadow: -1px 0 gold, 0 1px gold, 1px 0 gold, 0 -1px gold;
+}
+
+.hufflepuff{
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.ravenclaw{
+  color: blue;
+  text-shadow: -1px 0 #cd7f32, 0 1px #cd7f32, 1px 0 #cd7f32, 0 -1px #cd7f32;
+}
+
+.slytherin {
+  color: green;
+  text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
+}
+
+
 #mainNav {
   font-family: "Wizard", Impact, Haettenschweiler, "Arial Narrow Bold",
     sans-serif;
@@ -771,12 +792,12 @@ a.fifthFloorLink {
 }
 
 .housepoints h2 {
-  font-family: "Bottomrock", Helvetica, Arial, sans-serif;
-  color: black;
-  text-shadow: -1px 0 antiquewhite, 0 1px antiquewhite, 1px 0 antiquewhite,
-    0 -1px antiquewhite;
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
   margin-left: 15px;
+  font-size: 6.5vh;
 }
+
+
 
 #editProfileBody {
   padding: 30px;

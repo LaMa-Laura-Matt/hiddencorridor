@@ -1,8 +1,9 @@
 <body id="hiddenCorridorBody">
+<section class="sectionBackground">
+  <div class="row">
+    <div class="col text-center"><h1>Hidden House Points</h1></div></div>
 
-  <h1>Hidden House Points</h1>
-
-  <article>In this room all the 'Hidden Corridor' house points are accumulated.  You can earn house points by creating great potions that other wizards like.</article>
+  <article id="hiddenCorridorIntro">In this room all the 'Hidden Corridor' house points are accumulated.  You can earn house points by creating great potions that other wizards like.</article>
 
   <div class="container text-center housepoints">
     <div class="row">
@@ -12,7 +13,7 @@
           src="../../images/Hogwarts/gryffindorlogo.png"
           alt="Gryffindor Crest"
         />
-        <h2>Gryffindor: {{allHousePoints.gryffindorHousePoints}}</h2>
+        <h2 class="gryffindor">Gryffindor: {{allHousePoints.gryffindorHousePoints}}</h2>
       </div>
       <div class="col">
         <img
@@ -20,7 +21,7 @@
           src="../../images/Hogwarts/hufflepufflogo.png"
           alt="Hufflepuff Crest"
         />
-        <h2>Ravenclaw: {{allHousePoints.ravenclawHousePoints}}</h2>
+        <h2 class="hufflepuff">Hufflepuff: {{allHousePoints.hufflepuffHousePoints}}</h2>
       </div>
       <div class="col">
         <img
@@ -28,7 +29,7 @@
           src="../../images/Hogwarts/ravenclawlogo.png"
           alt="Ravenclaw Crest"
         />
-        <h2>Hufflepuff: {{allHousePoints.hufflepuffHousePoints}}</h2>
+        <h2 class="ravenclaw">Ravenclaw: {{allHousePoints.ravenclawHousePoints}}</h2>
       </div>
       <div class="col">
         <img
@@ -36,8 +37,9 @@
           src="../../images/Hogwarts/slytherinlogo.png"
           alt="Slytherin Crest"
         />
-        <h2>Slytherin: {{allHousePoints.slytherinHousePoints}}</h2>
+        <h2 class="slytherin">Slytherin: {{allHousePoints.slytherinHousePoints}}</h2>
       </div>
     </div>
   </div>
+  </section>
 </body>
