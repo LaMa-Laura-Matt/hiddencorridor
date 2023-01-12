@@ -252,13 +252,50 @@ span#message {
 }
 
 #hiddenCorridorBody h1 {
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 13vh;
+  color: gold;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top: 2.5vh;
+  margin-bottom: 2vh;
+}
+
+#hiddenCorridorBody h3 {
   font-family: "Parseltongue", Helvetica, Arial, sans-serif;
-  font-size: 10vh;
+  font-size: 6vh;
   color: darkgreen;
   text-shadow: -1px 0 greenyellow, 0 1px greenyellow, 1px 0 greenyellow,
     0 -1px greenyellow;
   margin-top: 2.5vh;
   margin-bottom: 2vh;
+}
+
+.howDidYou {
+  margin-top:6vh;
+}
+
+#hiddenCorridorIntro {
+  font-family: "Augusta", Helvetica, Arial, sans-serif;
+  font-size: 3vh;
+  color: gold;
+  margin-top: 1vh;
+  width:80vw;
+  padding-left: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#hiddenCorridorRoomsImageLinks a{
+  text-decoration: none;
+  
+}
+
+.hiddenRoomLinks {
+  text-decoration: none;
+  font-family: "Magic School", Helvetica, Arial, sans-serif;
+  font-size: 5vh;
+  color: gold;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-left:3vw;
 }
 
 .card {
@@ -709,11 +746,11 @@ a.fifthFloorLink {
 }
 
 #hiddenCorridorRoomsImageLinks {
-  margin-top: 10vh;
+  margin-top: 0vh;
 }
 
 #hiddenCorridorImg {
-  height: 33vh;
+  height: 20vw;
 }
 #likebox {
   margin-left: auto;
