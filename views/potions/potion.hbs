@@ -13,9 +13,9 @@
       <div class="col-1 text-center">
         {{potionDetails.numberOfLikes.length}}
         {{#if wizardHasNotLiked}}
-          <img src="../../images/Hogwarts/icon-empty-potion.png" />
-        {{else}}
           <img src="../../images/Hogwarts/icon-full-potion.png" />
+        {{else}}
+        <img src="../../images/Hogwarts/icon-empty-potion.png" />
         {{/if}}
 
         <form
@@ -41,9 +41,9 @@
             <img src="../../images/Hogwarts/icon-blue-wand.png" />
           </button>
           {{#if wizardHasNotLiked}}
-            <p class="smallTitleColor">Wand to like</p>
+          <p class="smallTitleColor">Unlike</p>
           {{else}}
-            <p class="smallTitleColor">Unlike</p>
+            <p class="smallTitleColor">Wand to like</p>
           {{/if}}
         </form>
       </div>

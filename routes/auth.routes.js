@@ -14,7 +14,6 @@ const Wizard = require("../models/Wizard.model");
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
-const isCurrentUser = require("../middleware/isCurrentUser");
 
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
@@ -169,12 +168,15 @@ router.get("/logout", (req, res) => {
 });
 
 //Profile Page
-router.get("/profile/:wizardId", isLoggedIn, isCurrentUser, (req, res, next) => {
+router.get("/profile/:wizardId", isLoggedIn, (req, res, next) => {
   const wizardId = req.params.wizardId;
 
   Wizard.findById(wizardId)
     //.populate("potion")
     .then((wizardDetails) => {
+      if (wizardDetails._id.toString() !== req.session.currentWizard._id) {
+        res.redirect("/auth/login");
+      }
       let gryffindor = false;
       let hufflepuff = false;
       let ravenclaw = false;
@@ -207,7 +209,7 @@ router.get("/profile/:wizardId", isLoggedIn, isCurrentUser, (req, res, next) => 
 });
 
 //display the update user form
-router.get("/profile/:profileId/edit", isLoggedIn, isCurrentUser, (req, res, next) => {
+router.get("/profile/:profileId/edit", isLoggedIn, (req, res, next) => {
   const id = req.params.profileId;
 
   Wizard.findById(id)
@@ -224,7 +226,7 @@ router.get("/profile/:profileId/edit", isLoggedIn, isCurrentUser, (req, res, nex
 module.exports = router;
 
 //UPDATE: process form
-router.post("/profile/:profileId/edit", isLoggedIn, isCurrentUser, (req, res, next) => {
+router.post("/profile/:profileId/edit", isLoggedIn, (req, res, next) => {
   const profileId = req.params.profileId;
 
   const newDetails = {
@@ -235,7 +237,9 @@ router.post("/profile/:profileId/edit", isLoggedIn, isCurrentUser, (req, res, ne
 
   Wizard.findByIdAndUpdate(profileId, newDetails, { new: true })
     .then((updatedDetails) => {
-
+      if (updatedDetails._id.toString() !== req.session.currentWizard._id) {
+        res.redirect("/auth/login");
+      }
       // Add the Wizard object to the session object
       req.session.currentWizard = updatedDetails.toObject();
       // Remove the password field

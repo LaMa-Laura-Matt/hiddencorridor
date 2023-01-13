@@ -60,18 +60,6 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
     numberOfLikes: req.session.currentWizard,
   };
 
-  function checkForEmptyFields(ingredientArray) {
-    if (ingredientArray.length > 0) {
-      ingredientArray.forEach((ingredient) => {
-        if (!ingredient.trim()) {
-          ingredientArray.splice(ingredientArray.indexOf(ingredient, 1));
-          console.log("Somebody tried to add an empty field!!");
-        }
-      });
-    }
-  }
-  checkForEmptyFields(newPotion.ingredients);
-
   if (
     newPotion.potionName === "" ||
     newPotion.method === "" ||
@@ -104,6 +92,7 @@ router.get("/potions/:potionid", isLoggedIn, (req, res, next) => {
   Potion.findById(id)
     .populate("wizard")
     .then((potionDetails) => {
+      let wizardHasNotLiked = potionDetails.numberOfLikes.includes(req.session.currentWizard._id);
       if (
         req.session.currentWizard.Wizardname === potionDetails.wizard.Wizardname
       ) {
@@ -114,6 +103,7 @@ router.get("/potions/:potionid", isLoggedIn, (req, res, next) => {
       res.render("potions/potion", {
         potionDetails: potionDetails,
         isOwner: isOwner,
+        wizardHasNotLiked: wizardHasNotLiked
       });
     })
     .catch((err) => {
@@ -218,7 +208,7 @@ router.post(
 router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
   const potionId = req.params.potionId;
   let newWizard = req.session.currentWizard._id;
-  let wizardHasNotLiked = false;
+  let wizardHasNotLiked = true;
 
   Potion.findById(potionId)
     //.populate('numberOfLikes').select('-password')
@@ -250,7 +240,7 @@ router.post("/potions/:potionId/like", isLoggedIn, (req, res, next) => {
         )
           .populate("wizard")
           .then((newPotionDetails) => {
-            wizardHasNotLiked = true;
+            wizardHasNotLiked = false;
             res.render("potions/potion", {
               potionDetails: newPotionDetails,
               wizardHasNotLiked: wizardHasNotLiked,
