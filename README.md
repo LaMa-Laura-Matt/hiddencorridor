@@ -14,7 +14,8 @@ npm install
 - You will need to create an .env file in the root folder
 ```
 PORT= 3000 // enter here the port number you would like to use
-SESSION_SECRET='secret-session' // enter here the SESSION_SECRET variable as a string, chose any key you like
+SESSION_SECRET='secret-session' // enter here the SESSION_SECRET 
+// variable as a string, chose any key you like
 ```
 - To run the application
 ```
@@ -23,4 +24,4 @@ npm run dev
 
 ### Demo
 Find the link here and explore the Hidden Corridor. Enjoy :)
-<a href="https://hidden-corridor.adaptable.app/" target="_blank">The Hidden Corridor!</a>
+<a href="https://hidden-corridor.adaptable.app/" target="_blank">Let's go!</a>
