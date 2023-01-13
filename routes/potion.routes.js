@@ -59,7 +59,31 @@ router.post("/create-potion", isLoggedIn, (req, res, next) => {
     wizard: req.session.currentWizard,
     numberOfLikes: req.session.currentWizard,
   };
-  console.log(newPotion);
+
+  function checkForEmptyFields(ingredientArray) {
+    if (ingredientArray.length > 0) {
+      ingredientArray.forEach((ingredient) => {
+        if (!ingredient.trim()) {
+          ingredientArray.splice(ingredientArray.indexOf(ingredient, 1));
+          console.log("Somebody tried to add an empty field!!");
+        }
+      });
+    }
+  }
+  checkForEmptyFields(newPotion.ingredients);
+
+  if (
+    newPotion.potionName === "" ||
+    newPotion.method === "" ||
+    newPotion.ingredients.length <= 1
+  ) {
+    res.status(400).render("potions/potion-create", {
+      errorMessage:
+        "The fields Potion Name, Method and Ingredients are required. Please provide your Potion's Name, Method to brew and at least one ingredient.",
+    });
+
+    return;
+  }
 
   Potion.create(newPotion)
     .then(() => {
@@ -137,6 +161,30 @@ router.post(
       difficulty: req.body.difficulty,
       sideEffects: req.body.sideEffects,
     };
+
+    function checkForEmptyFields(ingredientArray) {
+      if (ingredientArray.length > 0) {
+        ingredientArray.forEach((ingredient) => {
+          if (!ingredient.trim()) {
+            ingredientArray.splice(ingredientArray.indexOf(ingredient, 1));
+          }
+        });
+      }
+    }
+    checkForEmptyFields(newDetails.ingredients);
+
+    if (
+      newDetails.potionName === "" ||
+      newDetails.method === "" ||
+      newDetails.ingredients.length <= 1
+    ) {
+      res.status(400).render("potions/potion-edit", {
+        errorMessage:
+          "The fields Potion Name, Method and Ingredients are required. Please provide your Potion's Name, Method to brew and at least one ingredient.",
+      });
+
+      return;
+    }
 
     Potion.findByIdAndUpdate(potionId, newDetails)
       .then(() => {

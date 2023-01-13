@@ -9,10 +9,11 @@ const PotionSchema = new Schema(
       unique: true,
       trim: true,
     },
-    ingredients: {
-      type: Array,
+    ingredients: [{
+      type: String,
       required: true,
-    },
+      trim: true,
+  }],
     method: {
       type: String,
       required: true,

@@ -1,82 +1,115 @@
 <body id="hiddenCorridorBody">
 
-  <h1>Make changes to: {{potionName}}</h1>
-
-  <form id="potionEditForm" action="/potions/{{_id}}/edit" method="POST">
+  <section class="potion-details">
     <div class="row">
-    <div class="col text-center">
-      <label class="form-label">Potion Name
-        <textarea
-          type="text"
-          class="form-control"
-          name="potionName"
-          aria-label="potionName"
-          rows="1"
-        >{{potionName}}
-        </textarea>
-      </label>
+      <div class="col-1"></div>
+      <div class="col"><h1 class="largeTitleColor">Make Changes to:
+          {{potionName}}</h1></div>
     </div>
-
-    <div class="col text-center">
-      <label><span class="form-label">Ingredients</span>
-        <div id="updateIngredients">
-          {{#each ingredients}}
-            <li>
-              <br /><input type="text" name="ingredients" value={{this}} />
-              <input type="button" value="-" onClick="removeInput(this);" />
-            </li>
-          {{/each}}
-          <input type="button" value="+" onClick="addInputInUpdatePotion();" />
-        </div>
-      </label>
-    </div>
-
-    <div class="col text-center">
-      <label class="form-label">Method
-        <textarea
-          type="text"
-          class="form-control"
-          name="method"
-          aria-label="method"
-          rows="5"
-        >{{method}}
-        </textarea>
-      </label>
-    </div>
-
-    <div class="col text-center">
-      <label class="form-label">Difficulty
-      <select name="difficulty" class="form-select" aria-label="difficulty">
-        <option selected>{{difficulty}}</option>
-        <option value="squib">Squib</option>
-        <option value="firstYear">First Year</option>
-        <option value="owlLevel">OWL Level</option>
-        <option value="newtLevel">NEWT Level</option>
-        <option value="professor">Professor</option>
-      </select>
-      </label>
-    </div>
-
-    <div class="col text-center">
-      <label class="form-label">Side Effects
-      <textarea
-        type="text"
-        class="form-control"
-        name="sideEffects"
-        aria-label="sideEffects"
-        rows="1"
-      >{{sideEffects}}
-      </textarea>
-      </label>
-      <button type="submit" class="btn btn-success"> Fix your mistakes </button>
-    </div>
-
-
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
     {{/if}}
+    <form id="potionEditForm" action="/potions/{{_id}}/edit" method="POST">
+      <div class="row">
+        <div class="col text-center">
+          <label class="form-label smallTitleColor">Potion Name
+            <textarea
+              type="text"
+              class="form-control"
+              name="potionName"
+              aria-label="potionName"
+              rows="1"
+            >{{potionName}}
+            </textarea>
+          </label>
+        </div>
 
-    
-  </form>
-</div>
+        <div class="col text-center">
+          <label class="form-label smallTitleColor">Difficulty
+            <select
+              name="difficulty"
+              class="form-select"
+              aria-label="difficulty"
+            >
+              <option selected>{{difficulty}}</option>
+              <option value="squib">Squib</option>
+              <option value="firstYear">First Year</option>
+              <option value="owlLevel">OWL Level</option>
+              <option value="newtLevel">NEWT Level</option>
+              <option value="professor">Professor</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <label class="form-label smallTitleColor">Method
+            <textarea
+              placeholder="1. Step one, 2. Step two, etc"
+              type="text"
+              class="form-control"
+              name="method"
+              rows="4"
+            >{{method}}
+            </textarea>
+          </label>
+        </div>
+        <div id="formulario" class="col text-center">
+          <label><span class="form-label">Ingredients</span>
+            <input type="button" class="btn" value="+" onClick="addInput();" />
+            <ul style="list-style-type: none; ">
+              {{#each ingredients}}
+                <li>
+                  <br /><input type="text" name="ingredients" value={{this}} />
+                  <input
+                    type="button"
+                    class="btn"
+                    value="-"
+                    onClick="removeInput(this);"
+                  />
+                </li>
+              {{/each}}
+            </ul>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col text-center">
+          <label class="form-label smallTitleColor">Side Effects
+            <input
+              type="text"
+              class="form-control"
+              name="sideEffects"
+              placeholder="List Side Effects Here"
+              value={{sideEffects}}
+              aria-label="sideEffects"
+            />
+          </label>
+        </div>
+        <div class="col text-center">
+          <label class="form-label smallTitleColor">Brewing Time
+            <input
+              type="number"
+              class="form-control"
+              name="potionTime"
+              value={{potionTime}}
+              aria-label="potionTime"
+            />
+          </label>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col"><button
+            type="submit"
+            class="btn customBtnDesgin"
+            style="margin-top: 2vh;"
+          >Fix your mistakes</button></div>
+      </div>
+
+    </form>
+  </section>
 </body>
