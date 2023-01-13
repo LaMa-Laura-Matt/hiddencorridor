@@ -152,17 +152,6 @@ router.post(
       sideEffects: req.body.sideEffects,
     };
 
-    function checkForEmptyFields(ingredientArray) {
-      if (ingredientArray.length > 0) {
-        ingredientArray.forEach((ingredient) => {
-          if (!ingredient.trim()) {
-            ingredientArray.splice(ingredientArray.indexOf(ingredient, 1));
-          }
-        });
-      }
-    }
-    checkForEmptyFields(newDetails.ingredients);
-
     if (
       newDetails.potionName === "" ||
       newDetails.method === "" ||
