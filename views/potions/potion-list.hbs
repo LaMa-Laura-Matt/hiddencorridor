@@ -1,52 +1,58 @@
 <body id="hiddenCorridorBody">
-<section class="sectionBackground">
-  <div class="row">
+  <section class="sectionBackground">
+    <div class="row">
 
-    <div class="col-5 text-center" style="width:55vw">
-      <h1 class="largeTitleColor">Potion Chamber</h1>
+      <div class="col-5 text-center" style="width:55vw">
+        <h1 class="largeTitleColor">Potion Chamber</h1>
+      </div>
+      <div class="col-2 text-center"><a
+          class="btn customBtnDesgin customMargin"
+          href="/create-potion"
+        >Create Potion</a></div>
+
     </div>
-    <div class="col-2 text-center"><a class="btn customBtnDesgin customMargin" href="/create-potion">Create Potion</a></div>
-    
-  </div>
 
-  <!-- <div class="container"> </div>-->
-  <div class="row">
-    {{#each potions}}
-      <div class="col-sm">
-        <div class="card" style="width: 300px">
-          <div class="card-body">
-            <h5 class="card-title1 smallTitleColor">{{this.potionName}}</h5>
+    <!-- <div class="container"> </div>-->
+    <div class="row">
+      {{#each potions}}
+        <div class="col-sm">
+          <div class="card" style="width: 300px">
+            <div class="card-body">
+              <h5 class="card-title1 smallTitleColor">{{this.potionName}}</h5>
 
-            <h6 class="card-text1 mb-2 text-muted"><span
-                class="createdBy"
-              >Created by: </span><span
-                class="author"
-              >{{this.wizard.Wizardname}}</span></h6>
+              <h6 class="card-text1 mb-2 text-muted"><span
+                  class="createdBy"
+                >Created by: </span><span
+                  class="author"
+                >{{this.wizard.Wizardname}}</span></h6>
 
-            <!-- listing each of the ingredients here -->
-            <ul class="list-elements">
-              {{#each this.ingredients}}
-                <li>{{this}}</li>
-              {{/each}}
-            </ul>
+              <!-- listing each of the ingredients here -->
+              <ul class="list-elements">
+                {{#each this.ingredients}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
 
-            <div class="row card-footer">
-              <div class="col"><img
-                  src="../../images/Hogwarts/icon-full-potion.png"
-                />
+              <div class="row card-footer">
+                <div class="col"><img
+                    src="../../images/Hogwarts/icon-full-potion.png"
+                  />
+                </div>
+                <div class="col"><h5
+                    id="likeNumber"
+                  >{{this.numberOfLikes.length}}</h5></div>
+                <div class="col text-center">
+                  <a
+                    href="/potions/{{_id}}"
+                    class="btn customBtnDesgin"
+                  >Details</a></div>
               </div>
-              <div class="col"><h5
-                  id="likeNumber"
-                >{{this.numberOfLikes.length}}</h5></div>
-              <div class="col text-center">
-                <a href="/potions/{{_id}}" class="btn customBtnDesgin">Details</a></div>
             </div>
           </div>
         </div>
-      </div>
 
-    {{/each}}
-  </div>
-  
+      {{/each}}
+    </div>
+
   </section>
 </body>

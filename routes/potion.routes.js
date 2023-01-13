@@ -182,7 +182,6 @@ router.post(
         errorMessage:
           "The fields Potion Name, Method and Ingredients are required. Please provide your Potion's Name, Method to brew and at least one ingredient.",
       });
-
       return;
     }
 
